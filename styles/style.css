@@ -1,15 +1,10 @@
-﻿body{
-background-color: white;
-}
-
-
-  .container {
-    height: 150px;
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+﻿.container {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -21,11 +16,88 @@ background-color: white;
 .start {
 justify-content: center;
 font-size: 25px;
-  font-weight: 900;
-  letter-spacing: 10px;
-  font-family: 'Agency FB', monospace;
+font-weight: 900;
+letter-spacing: 10px;
+font-family: 'Agency FB', monospace;
   }
 
+#cbt {
+height: 150px;
+width: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border: 10px solid black;
+border-radius: 50% 50% 50% 50%;
+
+}
+
+#containerWIP1 {
+height: 150px;
+width: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-200%, -50%);
+border: 10px solid black;
+border-radius: 50% 50% 50% 50%;
+
+}
+
+#containerWIP2 {
+height: 150px;
+width: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(100%, -50%);
+border: 10px solid black;
+border-radius: 50% 50% 50% 50%;
+
+}
+
+#back {
+height: 50px;
+width: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, 250%);
+border: 10px solid black;
+border-radius: 50% 50% 50% 50%;
+font-size: 30px;
+font-weight: 500;
+letter-spacing: 10px;
+
+}
+
+
+
 a, a:visited, a:active, a:hover {
-    color: inherit
+    color: inherit;
+}
+
+
+
+ 
+
+body{
+background-color: white;
 }
