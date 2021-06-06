@@ -9,7 +9,22 @@
   font-size: 16px;
   margin: 4px 20px;
   cursor: pointer;
-  width: 200px;
+  width: 225px;
+  height: 20px;
+}
+
+.buttonwip {
+  background-color: #8f8f8f;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 20px;
+  cursor: pointer;
+  width: 225px;
   height: 20px;
 }
 
@@ -17,20 +32,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 80vh;
   }
 
 .backbutton{
-  display: flex;
-  align-items: bottom;
-  justify-content: right;
+  display: block;
+  float: left;
   background-color: red;
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  font-size: 16px;
+  margin: 4px 20px;
+  cursor: pointer;
+  width: 200px;
+  height: 20px;
+}
+
+.menubutton{
+  display: block;
+  float: right;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
   font-size: 16px;
   margin: 4px 20px;
   cursor: pointer;
