@@ -229,6 +229,35 @@
    margin: 0 auto;
 }
 
+.btnstart {
+  display: inline-grid;
+  color: #326096;
+  width: 200px;
+  height: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  border-radius: 50%;
+  border: solid 5px #326096;
+  padding: 25px;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  font-size: 32px;
+  font weight: bold;
+  transition: .8s;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 2px;
+
+
+}
+
+.btnstart:hover {
+  box-shadow: 0 0 0 2em var;
+  background: #326096;
+  color: white;
+  border: solid 5px #326096;
+
 body
 background-color: white;
 }
