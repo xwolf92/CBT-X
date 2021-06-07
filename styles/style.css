@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: 95vh;
   }
 
 .backbutton{
@@ -224,8 +224,8 @@
 {
    display: block;
    position: relative;
-   width: 200vh;
-   height: 83vh;
+   width: 100%;
+   height: 86vh;
    margin: 0 auto;
 }
 
@@ -257,6 +257,23 @@
   background: #326096;
   color: white;
   border: solid 5px #326096;
+    }
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  }
+
+ .toprightyt {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  }
 
 body
 background-color: white;
