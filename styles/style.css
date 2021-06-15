@@ -210,6 +210,30 @@
   filter: invert(1);
   }
 
+/* TABLES */
+
+table {
+  width:31%;
+  border: 2px solid black;
+  float: right;
+  margin-top: 4%;
+  margin-right: 8%;
+}
+
+table, th, td {
+   border-collapse: collapse;
+   padding: 5px;
+}
+
+th {
+  background: black;
+  color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #ebebeb;
+}
+
 /* GENERAL PROPERTIES */
 
 body{
