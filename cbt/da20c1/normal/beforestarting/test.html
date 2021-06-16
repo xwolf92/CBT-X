@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CBT-X</title>
+    <link rel="shortcut icon" href="../../../../favicon.ico" />
+    <link rel="stylesheet" href="../../../../Styles/style.css">
+</head>
+<body>
+
+<div>
+
+<img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
+
+<img id="cockpit" src="../../../../images/da20cockpitg500.jpg" style="margin-left:50px;margin-top:50px" usemap="#cockpit">
+
+<map name="cockpit">
+    <area target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="312,286,329,312" shape="rect" href="" onclick="changeImage()">
+    <area target="" alt="Throttle" title="Throttle" href="" coords="421,479,467,495" shape="rect">
+    <area target="" alt="Mixure" title="Mixure" href="" coords="472,481,490,518" shape="rect">
+    <area target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve" href="" coords="334,405,51" shape="circle">
+    <area target="" alt="Avionics Master" title="Avionics Master" href="" coords="340,289,349,310" shape="rect">
+    <area target="" alt="GEN Warning Light" title="GEN Warning Light" href="" coords="249,62,255,83" shape="rect">
+    <area target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light" href="" coords="261,84,257,62" shape="rect">
+    <area target="" alt="Position Light" title="Position Light" href="" coords="108,291,128,312" shape="rect">
+    <area target="" alt="Parking Brake" title="Parking Brake" href="" coords="456,380,471,402" shape="rect">
+</map>
+
+<script language="javascript">
+    function changeImage() {
+
+        if document.getElementById("cockpit").src == "../../../../images/da20cockpitg500.jpg";
+        {
+            document.getElementById("cockpit").src = "../../../../images/checklist.png";
+        }
+        else 
+        {
+            document.getElementById("imgClickAndChange").src = "http://www.userinterfaceicons.com/80x80/minimize.png";
+        }
+    }
+</script>
+
+<table align:"right" width:"30%">
+
+<tr>
+  <th colspan="2">BEFORE STARTING ENGINE</th>
+</tr>
+
+ <tr>
+  <td>1. Preflight Inspection</td>
+  <td align="right">PERFORMED</td>
+ </tr>
+ <tr>
+  <td>2. Pedals</td>
+  <td align="right">ADJUST, LOCK</td>
+ </tr>
+ <tr>
+  <td>3. Rudder</td>
+  <td align="right">FREE</td>
+ </tr>
+ <tr>
+  <td>4. Safety Belts</td>
+  <td align="right">FASTEN</td>
+ </tr>
+ <tr>
+  <td>5. Parking Brake</td>
+  <td align="right">ON</td>
+ </tr>
+ <tr>
+  <td>6. Fuel Shut-off Valve</td>
+  <td align="right">OPEN (Pushed)</td>
+ </tr>
+ <tr>
+  <td>7. Thottle</td>
+  <td align="right">IDLE</td>
+ </tr>
+ <tr>
+  <td>8. Mixture</td>
+  <td align="right">FULL RICH</td>
+ </tr>
+ <tr>
+  <td>9. Firction Device of Throttle Quadrant</td>
+  <td align="right">ADJUST</td>
+ </tr>
+ <tr>
+  <td>10. Avionics Master Switch</td>
+  <td align="right">OFF</td>
+ </tr>
+ <tr>
+  <td>11. BAT/GEN Master Switch</td>
+  <td align="right">ON</td>
+ </tr>
+ <tr>
+  <td>12. Generator Warning Light</td>
+  <td align="right">ILLUMINATED</td>
+ </tr>
+ <tr>
+  <td>13. Exterior Lights</td>
+  <td align="right">POSITION ON</td>
+ </tr>
+ <tr>
+  <td>14. Instrument Panel Lighting</td>
+  <td align="right">A/R</td>
+ </tr>
+ <tr>
+  <td>15. Canopy</td>
+  <td align="right">CLOSE AND SECURE</td>
+ </tr>
+ <tr>
+  <td>16. Canopy Unlock Warning Light</td>
+  <td align="right">OFF</td>
+ </tr>
+
+</table>
+</div>
+
+<div>
+ <a href="../normal.html" class="btnback">BACK</a>
+
+<div>
+ <a href="../../../../menu.html" class="btnmenu">MENU</a>
+
+</body>
+</html>
