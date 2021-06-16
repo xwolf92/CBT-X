@@ -13,10 +13,10 @@
 
 <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
 
-<img src="../../../../images/cockpitoff.jpg" style="margin-left:50px;margin-top:50px" usemap="#cockpit">
+<img id="cockpit" src="../../../../images/cockpitoff.jpg" style="margin-left:50px;margin-top:50px" usemap="#cockpit">
 
 <map name="cockpit">
-    <area target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" href="" coords="312,286,329,312" shape="rect">
+    <area target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="312,286,329,312" shape="rect" onclick="changeImage()">
     <area target="" alt="Throttle" title="Throttle" href="" coords="421,479,467,495" shape="rect">
     <area target="" alt="Mixure" title="Mixure" href="" coords="472,481,490,518" shape="rect">
     <area target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve" href="" coords="334,405,51" shape="circle">
@@ -26,6 +26,19 @@
     <area target="" alt="Position Light" title="Position Light" href="" coords="108,291,128,312" shape="rect">
     <area target="" alt="Parking Brake" title="Parking Brake" href="" coords="456,380,471,402" shape="rect">
 </map>
+
+<script language="javascript">
+    function changeImage() {
+        const cockpit = document.getElementById("cockpit");
+        let cockpitImgRoute = cockpit.attributes.src.nodeValue;
+        if (cockpitImgRoute === "../../../../images/cockpitoff.jpg"){
+            cockpit.attributes.src.nodeValue = "../../../../images/cockpiton.jpg";
+        }
+        else{
+            cockpit.attributes.src.nodeValue = "../../../../images/cockpitoff.jpg";
+        }
+    }
+</script>
 
 <table align:"right" width:"30%">
 

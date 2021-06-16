@@ -234,6 +234,13 @@ tr:nth-child(odd) {
     background-color: #ebebeb;
 }
 
+/* POINTER */
+
+.clickable{
+    cursor: pointer;
+}
+
+
 /* GENERAL PROPERTIES */
 
 body{
