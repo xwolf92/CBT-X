@@ -31,13 +31,11 @@
     function changeImage() {
         const cockpit = document.getElementById("cockpit");
         let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-        console.log(cockpitImgRoute)
-        if (cockpitImgRoute == "../../../../images/cockpitoff.jpg"){
-            cockpitImgRoute = "../../../../images/cockpiton.jpg";
+        if (cockpitImgRoute === "../../../../images/cockpitoff.jpg"){
+            cockpit.attributes.src.nodeValue = "../../../../images/cockpiton.jpg";
         }
         else{
-            document.getElementById("cockpit").src = "../../../../images/cockpiton.jpg";
-            cockpitImgRoute = "../../../../images/cockpitoff.jpg";
+            cockpit.attributes.src.nodeValue = "../../../../images/cockpitoff.jpg";
         }
     }
     changeImage();
