@@ -240,6 +240,17 @@ tr:nth-child(odd) {
     cursor: pointer;
 }
 
+/* HIGHLIGHT EFFECT */
+
+.titlehighlight span{
+    color: black;
+    background-color: #ffd53b;
+}
+
+.highlight span{
+    color: black;
+    background-color: #ffd53b;
+}
 
 /* GENERAL PROPERTIES */
 
