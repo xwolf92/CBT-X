@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   aheight: 150vh;
-  margin-top: 12%;
+  margin-top: 15%;
   }
 
 /* BUTTONS */
@@ -216,7 +216,7 @@ table {
   width:31%;
   border: 2px solid black;
   float: right;
-  margin-top: 4%;
+  margin-top: 8%;
   margin-right: 8%;
 }
 
