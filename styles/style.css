@@ -181,6 +181,56 @@
     border: solid 5px grey;
 }
 
+.btnnav {
+  display:grid;
+  color: rgb(42, 81, 126);
+  background: #ffffff;
+  height: 12vh;
+  width: 12vh;
+  border: 5px solid rgb(42, 81, 126);
+  border-radius: 50%;
+  text-decoration: none;
+  padding: 0px;
+  margin-top: 4vh;
+  text-align: center;
+  align-content: center;
+  vertical-align: top;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  transition: .4s;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 2px;
+}
+
+.btnnav:hover {
+    background: rgb(42, 81, 126);
+    color: #ffffff;
+    border: 5px solid rgb(42, 81, 126);
+}
+
+#nextbtn{
+  border: 5px solid rgb(145, 145, 145);
+  color:rgb(145, 145, 145)
+}
+
+#nextbtn:hover{
+  background-color: rgb(145, 145, 145);
+  border: 5px solid rgb(145, 145, 145);
+  color:rgb(255, 255, 255)
+}
+
+#backbtn{
+  border: 5px solid rgb(145, 145, 145);
+  color:rgb(145, 145, 145)
+}
+
+#backbtn:hover{
+  background-color: rgb(145, 145, 145);
+  border: 5px solid rgb(145, 145, 145);
+  color:rgb(255, 255, 255)
+}
+
 /* IFRAME PROPERTIES */
 
 #myIframe{
@@ -214,6 +264,7 @@
 table {
   width:100%;
   border: 2px solid black;
+  font-family: Verdana, sans-serif;
   }
 
 table, th, td {
@@ -262,6 +313,15 @@ tr:nth-child(odd) {
 .cockpit{
   position:absolute;
   right: 30vh;
+  width: 83%;
+}
+
+/* NAVDIV */
+
+.navdiv{
+  position:absolute;
+  right: 10vh;
+  top: 25vh;
 }
 
 /* GENERAL PROPERTIES */
