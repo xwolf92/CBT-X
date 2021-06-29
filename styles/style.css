@@ -212,9 +212,8 @@
 /* TABLES */
 
 table {
-  width:30%;
+  width:100%;
   border: 2px solid black;
-  float: right;
   }
 
 table, th, td {
@@ -229,6 +228,15 @@ th {
 
 tr:nth-child(odd) {
     background-color: #ebebeb;
+}
+
+.tablediv{
+  position:absolute;
+  top: 67vh;
+  right: 35vh;
+  overflow: scroll;
+  height: 30%;
+  width: 30%;
 }
 
 /* POINTER */
@@ -247,6 +255,13 @@ tr:nth-child(odd) {
 .highlight span{
     color: black;
     background-color: #ffd53b;
+}
+
+/* COCKPIT */
+
+.cockpit{
+  position:absolute;
+  right: 30vh;
 }
 
 /* GENERAL PROPERTIES */
