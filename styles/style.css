@@ -12,6 +12,14 @@
   height: 100vh;
   }
 
+ .ctrmultibtn{
+  display:flex;
+  padding-top: 7vh;
+  justify-content: center;
+  vertical-align: text-bottom;
+  height: 32vh;
+  }
+
 /* BUTTONS */
 
 .btnstart {
@@ -38,20 +46,22 @@
 @keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
 
 .btn {
-  display: inline-grid;
-  color: #326096;
-  width: 200px;
-  height: 200px;
-  margin-left: 20px;
-  margin-right: 20px;
-  text-decoration: none;
+  display:grid;
+  color: rgb(42, 81, 126);
+  background: #ffffff;
+  height: 30vh;
+  width: 30vh;
+  border: 5px solid rgb(42, 81, 126);
   border-radius: 50%;
-  border: solid 5px #326096;
-  padding: 25px;
+  text-decoration: none;
+  padding: 0px;
+  margin-top: 4vh;
+  margin-right: 3vh;
   text-align: center;
   align-content: center;
+  vertical-align: top;
   justify-content: center;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: bold;
   transition: .4s;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -65,19 +75,22 @@
 }
 
 .btnemer {
-  display: inline-grid;
-  color: #d10000;
-  width: 200px;
-  height: 200px;
-  margin-left: 50px;
-  text-decoration: none;
+  display:grid;
+  color: rgb(150, 0, 0);
+  background: #ffffff;
+  height: 30vh;
+  width: 30vh;
+  border: 5px solid rgb(150, 0, 0);
   border-radius: 50%;
-  border: solid 5px #d10000;
-  padding: 25px;
+  text-decoration: none;
+  padding: 0px;
+  margin-top: 4vh;
+  margin-right: 3vh;
   text-align: center;
   align-content: center;
+  vertical-align: top;
   justify-content: center;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: bold;
   transition: .4s;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -153,20 +166,22 @@
 }
 
 .btnwip {
-  display: inline-grid;
-  color: grey;
-  width: 200px;
-  height: 200px;
-  margin-left: 20px;
-  margin-right: 20px;
-  text-decoration: none;
+  display:grid;
+  color: rgb(117, 117, 117);
+  background: #ffffff;
+  height: 30vh;
+  width: 30vh;
+  border: 5px solid rgb(117, 117, 117);
   border-radius: 50%;
-  border: solid 5px grey;
-  padding: 25px;
+  text-decoration: none;
+  padding: 0px;
+  margin-top: 4vh;
+  margin-right: 3vh;
   text-align: center;
   align-content: center;
+  vertical-align: top;
   justify-content: center;
-  font-size: 32px;
+  font-size: 25px;
   font-weight: bold;
   transition: .4s;
   font-family: 'Open Sans Condensed', sans-serif;
