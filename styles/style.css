@@ -15,8 +15,6 @@
 /* BUTTONS */
 
 .btnstart {
-  position: relative;
-  justify-content:center;
   width: 400px;
   height: 400px;
   border: none;
@@ -283,7 +281,7 @@ tr:nth-child(odd) {
 
 .tablediv{
   position:absolute;
-  top: 67vh;
+  top: 68vh;
   right: 35vh;
   overflow: scroll;
   height: 30%;
