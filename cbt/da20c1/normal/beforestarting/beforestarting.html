@@ -1,370 +1,198 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>CBT-X</title>
-    <link rel="shortcut icon" href="../../../../favicon.ico" />
-    <link rel="stylesheet" href="../../../../styles/style.css">
-    <script src="../../../../scripts/imageMapResizer.min.js"></script>
-</head>
-<body>
+   <head>
+      <meta charset="utf-8" />
+      <title>CBT-X</title>
+      <link rel="shortcut icon" href="../../../../favicon.ico" />
+      <link rel="stylesheet" href="../../../../styles/style.css">
+      <script src="../../../../scripts/imageMapResizer.min.js"></script>
+   </head>
+   <body>
 
-<div>
-
-<img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
-
-<img id="cockpit" class="cockpit" src="../../../../images/cockpitoff.jpg" usemap="#touchcockpit">
-
-<map name="touchcockpit">
-<!--
-   <area target="" alt="Parking Brake" title="Parking Brake" coords="990,783,1020,822" shape="rect" " cursor="pointer">
-   <area target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" " cursor="pointer">
-   <area target="#" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer">
-   <area target="" alt="Mixure" title="Mixure"  coords="876,1058,832,988" shape="rect" onclick="; highlight8()" cursor="pointer">
-   <area target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1041,741,1102,817" shape="rect"  cursor="pointer">
-   <area target="" alt="Avionics Master" title="Avionics Master"  coords="761,680,739,637" shape="rect"  cursor="pointer">
-   <area target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="539,141,553,192" shape="rect" )" cursor="pointer">
-   <area target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="571,191,555,142" shape="rect" )" cursor="pointer">
-   <area target="" alt="Position Light" title="Position Light" coords="233,639,280,687" shape="rect" onclick="changeImage3(); highlight13()" cursor="pointer">
--->
-   </map>
-
+      <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
+      <img id="cockpit" class="cockpit" src="../../../../images/cockpitoff.jpg" usemap="#touchcockpit">
+      <map name="touchcockpit">
+      <!--
+         <area target="" alt="Parking Brake" title="Parking Brake" coords="990,783,1020,822" shape="rect" " cursor="pointer">
+         <area target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" " cursor="pointer">
+         <area target="#" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer">
+         <area target="" alt="Mixure" title="Mixure"  coords="876,1058,832,988" shape="rect" onclick="; highlight8()" cursor="pointer">
+         <area target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1041,741,1102,817" shape="rect"  cursor="pointer">
+         <area target="" alt="Avionics Master" title="Avionics Master"  coords="761,680,739,637" shape="rect"  cursor="pointer">
+         <area target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="539,141,553,192" shape="rect" )" cursor="pointer">
+         <area target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="571,191,555,142" shape="rect" )" cursor="pointer">
+         <area target="" alt="Position Light" title="Position Light" coords="233,639,280,687" shape="rect" onclick="changeImage3(); highlight13()" cursor="pointer">
+      -->
+      </map>
 
 <!--DELETE <area target="#" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer"> -->
 
-<script>
-   function start() {
-   var element = document.getElementById("itemtitle");
-   element.classList.add("titlehighlight");
+      <div class="tablediv">
+         <table id="table" align="right">
+            <tr>
+               <th colspan="2" id="itemtitle"><span>BEFORE STARTING ENGINE</span></th>
+            </tr>
+            <tr id="item1" onclick="changeImage(event); highlight(event)">
+               <td><span>1. Preflight Inspection</span></td>
+               <td align="right"><span>PERFORMED</span></td>
+            </tr>
+            <tr id="item2" onclick="highlight(event)">
+               <td><span>2. Pedals</span></td>
+               <td align="right"><span>ADJUST, LOCK</span></td>
+            </tr>
+            <tr id="item3" onclick="highlight(event)">
+               <td><span>3. Rudder</span></td>
+               <td align="right"><span>FREE</span></td>
+            </tr>
+            <tr id="item4" onclick="highlight(event)">
+               <td><span>4. Safety Belts</span></td>
+               <td align="right"><span>FASTEN</span></td>
+            </tr>
+            <tr id="item5" onclick="highlight(event)">
+               <td><span>5. Parking Brake</span></td>
+               <td align="right"><span>ON</span></td>
+            </tr>
+            <tr id="item6" onclick="highlight(event)">
+               <td><span>6. Fuel Shut-off Valve</span></td>
+               <td align="right"><span>OPEN (Pushed)</span></td>
+            </tr>
+            <tr id="item7" onclick="highlight(event)">
+               <td><span>7. Thottle</span></td>
+               <td align="right"><span>IDLE</span></td>
+            </tr>
+            <tr id="item8" onclick="changeImage(event); highlight(event)">
+               <td><span>8. Mixture</span></td>
+               <td align="right"><span>FULL RICH</span></td>
+            </tr>
+            <tr id="item9" onclick="highlight(event)">
+               <td><span>9. Firction Device of Throttle Quadrant</span></td>
+               <td align="right"><span>ADJUST</span></td>
+            </tr>
+            <tr id="item10" onclick="highlight(event)">
+               <td><span>10. Avionics Master Switch</span></td>
+               <td align="right"><span>OFF</span></td>
+            </tr>
+            <tr id="item11" onclick="changeImage(event); highlight(event)">
+               <td><span>11. BAT/GEN Master Switch</span></td>
+               <td align="right"><span>ON</span></td>
+            </tr>
+            <tr id="item12" onclick="highlight(event)">
+               <td><span>12. Generator Warning Light</span></td>
+               <td align="right"><span>ILLUMINATED</span></td>
+            </tr>
+            <tr id="item13" onclick="highlight(event)">
+               <td><span>13. Exterior Lights</span></td>
+               <td align="right"><span>POSITION ON</span></td>
+            </tr>
+            <tr id="item14" onclick="highlight(event)">
+               <td><span>14. Instrument Panel Lighting</span></td>
+               <td align="right"><span>A/R</span></td>
+            </tr>
+            <tr id="item15" onclick="changeImage(event); highlight(event)">
+               <td><span>15. Canopy</span></td>
+               <td align="right"><span>CLOSE AND SECURE</span></td>
+            </tr>
+            <tr id="item16" onclick="highlight(event)">
+               <td><span>16. Canopy Unlock Warning Light</span></td>
+               <td align="right"><span>OFF</span></td>
+            </tr>
+         </table>
+      </div>
+      <a href="../normal.html" class="btnback">BACK</a>
+      <a href="../../../../menu.html" class="btnmenu">MENU</a>
+      <div class="navdiv" >
+         <a class="btnnav" id="startbtn" onclick="start()">START</a>
+         <a class="btnnav" id="nextbtngrey">NEXT</a>
+         <a class="btnnav" id="backbtngrey">BACK</a>
+      </div>
 
-   var element = document.getElementById("nextbtngrey");
-   element.id = "nextbtn";
-   element.addEventListener("click", item1);
+      <script>
+         function item1(){
+            var element = document.getElementById("item1");
+            element.classList.add("highlight");
 
-   var element = document.getElementById("startbtn");
-   element.id = "startbtngrey";
+            var element = document.getElementById("nextbtn")
+            element.removeEventListener("click", item1,);
+            element.addEventListener("click", item2);
+         };
 
-   var element = document.getElementById("backbtngrey");
-   element.id = "backbtn";
+         function item2(){
+            var element = document.getElementById("item2");
+            element.classList.add("highlight");
 
-   }
-</script>
+            var element = document.getElementById("nextbtn")
+            element.removeEventListener("click", item2,);
+            element.addEventListener("click", item3);
+         };
 
-<script>
-   function item1(){
-    var element = document.getElementById("item1");
-    element.classList.add("highlight");
+         function item3(){
+            var element = document.getElementById("item3");
+            element.classList.add("highlight");
 
-    var element = document.getElementById("nextbtn")
-    element.removeEventListener("click", item1,);
-    element.addEventListener("click", item2);
-   }
+            var element = document.getElementById("nextbtn")
+            element.removeEventListener("click", item3,);
+            element.addEventListener("click", item4);
+         };
 
-</script>
+         function item4(){
+            var element = document.getElementById("item4");
+            element.classList.add("highlight");
 
-<script>
-   function item2(){
-    var element = document.getElementById("item2");
-    element.classList.add("highlight");
+            var element = document.getElementById("nextbtn")
+            element.removeEventListener("click", item4,);
+            
+            var element = document.getElementById("nextbtn");
+            element.id = "touchbtn";
+            document.getElementById("touchbtn").innerHTML = "TOUCH";
+         };
 
-    var element = document.getElementById("nextbtn")
-    element.removeEventListener("click", item2,);
-    element.addEventListener("click", item3);
-   }
+      </script>
 
-</script>
+      <script>
+         imageMapResize();
+         
+         const itemTitle = document.getElementById("itemtitle");
+         const nextBtnGrey = document.getElementById("nextbtngrey");
+         const startBtn = document.getElementById("startbtn");
+         const backBtnGrey = document.getElementById("backbtngrey");
+         const imgsRoute = '../../../../images/';
 
-<script>
-   function item3(){
-    var element = document.getElementById("item3");
-    element.classList.add("highlight");
+         // Aplica clase 'titlehighlight' sobre el elemento itemTitle
 
-    var element = document.getElementById("nextbtn")
-    element.removeEventListener("click", item3,);
-    element.addEventListener("click", item4);
-   }
+         function start() {
+            itemTitle.classList.add("titlehighlight");
+         };
 
-</script>
+         // Aplica clase 'Highlight' sobre elementos 1 a 16 de manera dinámica solo después de activar START Button
 
-<script>
-   function item4(){
-    var element = document.getElementById("item4");
-    element.classList.add("highlight");
+         function highlight(event) {
+            const elementId = event.path[1].id;
+            const element = document.getElementById(elementId);
+            if(!itemTitle.classList.value) {
+               return
+            } else {
+               element.classList.add('highlight');
+            }
+         };
 
-    var element = document.getElementById("nextbtn")
-    element.removeEventListener("click", item4,);
-   
-    var element = document.getElementById("nextbtn");
-    element.id = "touchbtn";
-    document.getElementById("touchbtn").innerHTML = "TOUCH";
+         // Substituye imagen al clickar en el elemento de la lista correspondiente
 
+         function changeImage(event) {
+            const cockpit = document.getElementById("cockpit");
+            let cockpitImgRoute = cockpit.attributes.src.nodeValue;
+            const elementId = event.path[1].id;
+            const element = document.getElementById(elementId);
+            if (cockpitImgRoute === imgsRoute + 'cockpitoff.jpg' && elementId === 'item1'){
+                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmixture.jpg';
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitmixture.jpg' && elementId === 'item8'){
+                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmaster.jpg';
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitmaster.jpg' && elementId === 'item11'){
+                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitposition.jpg';
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitposition.jpg' && elementId === 'item15'){
+                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitcanopyclosed.jpg';
+            }
+         };
+      </script>
 
-   }
-
-</script>
-
-<script language="javascript">
-    function changeImage1() {
-        const cockpit = document.getElementById("cockpit");
-        let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-        if (cockpitImgRoute === "../../../../images/cockpitoff.jpg"){
-            cockpit.attributes.src.nodeValue = "../../../../images/cockpitmixture.jpg";
-        }
-        
-    }
-</script>
-
-<script language="javascript">
-    function changeImage2() {
-        const cockpit = document.getElementById("cockpit");
-        let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-        if (cockpitImgRoute === "../../../../images/cockpitmixture.jpg"){
-            cockpit.attributes.src.nodeValue = "../../../../images/cockpitmaster.jpg";
-        }
-        
-    }
-</script>
-
-<script language="javascript">
-    function changeImage3() {
-        const cockpit = document.getElementById("cockpit");
-        let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-        if (cockpitImgRoute === "../../../../images/cockpitmaster.jpg"){
-            cockpit.attributes.src.nodeValue = "../../../../images/cockpitposition.jpg";
-        }
-        
-    }
-</script>
-
-<script language="javascript">
-    function changeImage4() {
-        const cockpit = document.getElementById("cockpit");
-        let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-        if (cockpitImgRoute === "../../../../images/cockpitposition.jpg"){
-            cockpit.attributes.src.nodeValue = "../../../../images/cockpitcanopyclosed.jpg";
-        }
-        
-    }
-</script>
-
-<script>
-function titleHighlight() {
-   var element = document.getElementById("itemtitle");
-   element.classList.add("titlehighlight");
-}
-</script>
-
-<script>
-function highlight1() {
-   var element = document.getElementById("item1");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight2() {
-   var element = document.getElementById("item2");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight3() {
-   var element = document.getElementById("item3");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight4() {
-   var element = document.getElementById("item4");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight5() {
-   var element = document.getElementById("item5");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight6() {
-   var element = document.getElementById("item6");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight7() {
-   var element = document.getElementById("item7");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight8() {
-   var element = document.getElementById("item8");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight9() {
-   var element = document.getElementById("item9");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight10() {
-   var element = document.getElementById("item10");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight11() {
-   var element = document.getElementById("item11");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight12() {
-   var element = document.getElementById("item12");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight13() {
-   var element = document.getElementById("item13");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight14() {
-   var element = document.getElementById("item14");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight15() {
-   var element = document.getElementById("item15");
-   element.classList.add("highlight");
-}
-</script>
-
-<script>
-function highlight16() {
-   var element = document.getElementById("item16");
-   element.classList.add("highlight");
-}
-</script>
-
-<div class=tablediv>
-
-<table align:"right" id=table>
-
-<tr>
-  <th colspan="2" id="itemtitle"><span>BEFORE STARTING ENGINE</span></th>
-</tr>
-
- <tr id="item1" ">
-  <td><span>1. Preflight Inspection</span></td>
-  <td align="right"><span>PERFORMED</span></td>
- </tr>
- <tr id="item2" ">
-  <td><span>2. Pedals</span></td>
-  <td align="right"><span>ADJUST, LOCK</span></td>
- </tr>
- <tr id="item3" ">
-  <td><span>3. Rudder</span></td>
-  <td align="right"><span>FREE</span></td>
- </tr>
- <tr id="item4" ">
-  <td><span>4. Safety Belts</span></td>
-  <td align="right"><span>FASTEN</span></td>
- </tr>
- <tr id="item5">
-  <td><span>5. Parking Brake</span></td>
-  <td align="right"><span>ON</span></td>
- </tr>
- <tr id="item6">
-  <td><span>6. Fuel Shut-off Valve</span></td>
-  <td align="right"><span>OPEN (Pushed)</span></td>
- </tr>
- <tr id="item7">
-  <td><span>7. Thottle</span></td>
-  <td align="right"><span>IDLE</span></td>
- </tr>
- <tr id="item8">
-  <td><span>8. Mixture</span></td>
-  <td align="right"><span>FULL RICH</span></td>
- </tr>
- <tr id="item9" ">
-  <td><span>9. Firction Device of Throttle Quadrant</span></td>
-  <td align="right"><span>ADJUST</span></td>
- </tr>
- <tr id="item10">
-  <td><span>10. Avionics Master Switch</span></td>
-  <td align="right"><span>OFF</span></td>
- </tr>
- <tr id="item11">
-  <td><span>11. BAT/GEN Master Switch</span></td>
-  <td align="right"><span>ON</span></td>
- </tr>
- <tr id="item12">
-  <td><span>12. Generator Warning Light</span></td>
-  <td align="right"><span>ILLUMINATED</span></td>
- </tr>
- <tr id="item13">
-  <td><span>13. Exterior Lights</span></td>
-  <td align="right"><span>POSITION ON</span></td>
- </tr>
- <tr id="item14" )">
-  <td><span>14. Instrument Panel Lighting</span></td>
-  <td align="right"><span>A/R</span></td>
- </tr>
- <tr id="item15" onclick="changeImage4(), highlight15()">
-  <td><span>15. Canopy</span></td>
-  <td align="right"><span>CLOSE AND SECURE</span></td>
- </tr>
- <tr id="item16">
-  <td><span>16. Canopy Unlock Warning Light</span></td>
-  <td align="right"><span>OFF</span></td>
- </tr>
-
-</table>
-
-</div>
-
-<div>
- <a href="../normal.html" class="btnback">BACK</a>
-
-<div>
- <a href="../../../../menu.html" class="btnmenu">MENU</a>
-
-
-</script>
-
-<div class="navdiv" >
-   <a class="btnnav" id="startbtn" onclick="start()">START</a>
-   <a class="btnnav" id="nextbtngrey">NEXT</a>
-   <a class="btnnav" id="backbtngrey">BACK</a>
-
-</div>
-
-</body>
-
-<script>
-   imageMapResize();
-
-</script>
-
+   </body>
 </html>
