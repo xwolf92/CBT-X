@@ -222,23 +222,34 @@
     border: 5px solid rgb(42, 81, 126);
 }
 
-#nextbtn{
+#nextbtngrey{
   border: 5px solid rgb(145, 145, 145);
   color:rgb(145, 145, 145)
 }
 
-#nextbtn:hover{
+#nextbtngrey:hover{
   background-color: rgb(145, 145, 145);
   border: 5px solid rgb(145, 145, 145);
   color:rgb(255, 255, 255)
 }
 
-#backbtn{
+#nextbtn{
+  border: 5px solid rgb(42, 81, 126);
+  color:rgb(42, 81, 126)
+}
+
+#nextbtn:hover{
+  background-color: rgb(255, 255, 255);
+  border: 5px solid rgb(42, 81, 126);
+  color:rgb(42, 81, 126)
+}
+
+#backbtngrey{
   border: 5px solid rgb(145, 145, 145);
   color:rgb(145, 145, 145)
 }
 
-#backbtn:hover{
+#backbtngrey:hover{
   background-color: rgb(145, 145, 145);
   border: 5px solid rgb(145, 145, 145);
   color:rgb(255, 255, 255)
@@ -297,7 +308,7 @@ tr:nth-child(odd) {
 .tablediv{
   position:absolute;
   top: 68vh;
-  right: 35vh;
+  right: 40vh;
   overflow: scroll;
   height: 30%;
   width: 30%;
@@ -325,8 +336,9 @@ tr:nth-child(odd) {
 
 .cockpit{
   position:absolute;
-  right: 30vh;
-  width: 83%;
+  
+right: 40vh;
+width: 78%;
 }
 
 /* NAVDIV */
