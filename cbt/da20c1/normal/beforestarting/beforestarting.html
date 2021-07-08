@@ -101,15 +101,28 @@
     document.getElementById("touchbtn").innerHTML = "TOUCH";
 
    document.getElementById("map").innerHTML +=
-   '<area target="" alt="Parking Brake" title="Parking Brake" coords="990,783,1020,822" shape="rect" " cursor="pointer">'
+   '<area class="clickable" onclick=changeImage1();item5() target="" alt="Parking Brake" title="Parking Brake" coords="990,883,1022,922" shape="rect" " cursor="pointer">'
 
    imageMapResize();
    }
 
    function item5(){
+    var element = document.getElementById("item5");
+    element.classList.add("highlight");
+    document.getElementById("map").innerHTML 
+    '<area class="clickable" onclick=changeImage1();item5() target="" alt="Parking Brake" title="Parking Brake" coords="990,883,1022,922" shape="rect" " cursor="pointer">'
+   document.getElementById("map").innerHTML +=
+   '<area class="clickable" onclick=item6() target="" alt="Fuel shut-off valve" title="Parking Brake" coords="1041,739,1102,815" shape="rect" " cursor="pointer">'   
+}
 
-   
-   }
+  /*  function item6(){
+    var element = document.getElementById("item6");
+    element.classList.add("highlight");
+    document.getElementById("map").innerHTML -=
+    '<area class="clickable" onclick=item6() target="" alt="Fuel shut-off valve" title="Parking Brake" coords="1041,739,1102,815" shape="rect" " cursor="pointer">'   
+    document.getElementById("map").innerHTML +=
+   '<area class="clickable" onclick=changeImage2();item6() target="" alt="Fuel shut-off valve" title="Parking Brake" coords="1041,739,1102,815" shape="rect" " cursor="pointer">'
+   } */
 
 
 
@@ -120,7 +133,7 @@
         const cockpit = document.getElementById("cockpit");
         let cockpitImgRoute = cockpit.attributes.src.nodeValue;
         if (cockpitImgRoute === "../../../../images/cockpitoff.jpg"){
-            cockpit.attributes.src.nodeValue = "../../../../images/cockpitmixture.jpg";
+            cockpit.attributes.src.nodeValue = "../../../../images/cockpitparking.jpg";
         }
         
     }
@@ -130,7 +143,7 @@
     function changeImage2() {
         const cockpit = document.getElementById("cockpit");
         let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-        if (cockpitImgRoute === "../../../../images/cockpitmixture.jpg"){
+        if (cockpitImgRoute === "../../../../images/cockpitparkinge.jpg"){
             cockpit.attributes.src.nodeValue = "../../../../images/cockpitmaster.jpg";
         }
         
