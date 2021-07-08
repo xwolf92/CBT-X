@@ -40,7 +40,7 @@
 
    var element = document.getElementById("nextbtngrey");
    element.id = "nextbtn";
-   element.addEventListener("click", item1(),);
+   element.addEventListener("click", item1);
 
    var element = document.getElementById("backbtngrey");
    element.id = "backbtn";
@@ -50,10 +50,21 @@
 
 <script>
    function item1(){
-      href = "#";
-
-
+    var element = document.getElementById("item1");
+    element.classList.add("highlight");
+    element.addEventListener("click", item2);
+    element.removeEventListener("click", item1);
    }
+
+</script>
+
+<script>
+   function item2(){
+    var element = document.getElementById("item2");
+    element.classList.add("highlight");
+    element.addEventListener("click", item3);
+   }
+
 </script>
 
 <script language="javascript">

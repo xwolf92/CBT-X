@@ -239,9 +239,9 @@
 }
 
 #nextbtn:hover{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(42, 81, 126);
   border: 5px solid rgb(42, 81, 126);
-  color:rgb(42, 81, 126)
+  color:rgb(255, 255, 255)
 }
 
 #backbtngrey{
