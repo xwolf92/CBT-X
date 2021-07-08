@@ -16,8 +16,9 @@
 
 <img id="cockpit" class="cockpit" src="../../../../images/cockpitoff.jpg" usemap="#touchcockpit">
 
-<map name="touchcockpit">
-<!--
+<map id="map" name="touchcockpit">
+
+  <!--
    <area target="" alt="Parking Brake" title="Parking Brake" coords="990,783,1020,822" shape="rect" " cursor="pointer">
    <area target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" " cursor="pointer">
    <area target="#" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer">
@@ -99,8 +100,18 @@
     element.id = "touchbtn";
     document.getElementById("touchbtn").innerHTML = "TOUCH";
 
+   document.getElementById("map").innerHTML +=
+   '<area target="" alt="Parking Brake" title="Parking Brake" coords="990,783,1020,822" shape="rect" " cursor="pointer">'
 
+   imageMapResize();
    }
+
+   function item5(){
+
+   
+   }
+
+
 
 </script>
 
@@ -362,9 +373,5 @@ function highlight16() {
 
 </body>
 
-<script>
-   imageMapResize();
-
-</script>
 
 </html>
