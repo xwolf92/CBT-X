@@ -222,6 +222,17 @@
     border: 5px solid rgb(42, 81, 126);
 }
 
+#startbtngrey{
+  border: 5px solid rgb(145, 145, 145);
+  color:rgb(145, 145, 145)
+}
+
+#startbtngrey:hover{
+  background-color: rgb(145, 145, 145);
+  border: 5px solid rgb(145, 145, 145);
+  color:rgb(255, 255, 255)
+}
+
 #nextbtngrey{
   border: 5px solid rgb(145, 145, 145);
   color:rgb(145, 145, 145)
@@ -241,6 +252,17 @@
 #nextbtn:hover{
   background-color: rgb(42, 81, 126);
   border: 5px solid rgb(42, 81, 126);
+  color:rgb(255, 255, 255)
+}
+
+#touchbtn{
+  border: 5px solid rgb(145, 145, 145);
+  color:rgb(145, 145, 145)
+}
+
+#touchbtn:hover{
+  background-color: rgb(145, 145, 145);
+  border: 5px solid rgb(145, 145, 145);
   color:rgb(255, 255, 255)
 }
 

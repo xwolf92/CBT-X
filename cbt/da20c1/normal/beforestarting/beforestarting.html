@@ -42,6 +42,9 @@
    element.id = "nextbtn";
    element.addEventListener("click", item1);
 
+   var element = document.getElementById("startbtn");
+   element.id = "startbtngrey";
+
    var element = document.getElementById("backbtngrey");
    element.id = "backbtn";
 
@@ -52,8 +55,10 @@
    function item1(){
     var element = document.getElementById("item1");
     element.classList.add("highlight");
+
+    var element = document.getElementById("nextbtn")
+    element.removeEventListener("click", item1,);
     element.addEventListener("click", item2);
-    element.removeEventListener("click", item1);
    }
 
 </script>
@@ -62,7 +67,39 @@
    function item2(){
     var element = document.getElementById("item2");
     element.classList.add("highlight");
+
+    var element = document.getElementById("nextbtn")
+    element.removeEventListener("click", item2,);
     element.addEventListener("click", item3);
+   }
+
+</script>
+
+<script>
+   function item3(){
+    var element = document.getElementById("item3");
+    element.classList.add("highlight");
+
+    var element = document.getElementById("nextbtn")
+    element.removeEventListener("click", item3,);
+    element.addEventListener("click", item4);
+   }
+
+</script>
+
+<script>
+   function item4(){
+    var element = document.getElementById("item4");
+    element.classList.add("highlight");
+
+    var element = document.getElementById("nextbtn")
+    element.removeEventListener("click", item4,);
+   
+    var element = document.getElementById("nextbtn");
+    element.id = "touchbtn";
+    document.getElementById("touchbtn").innerHTML = "TOUCH";
+
+
    }
 
 </script>
