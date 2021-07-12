@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="../../../../favicon.ico" />
     <link rel="stylesheet" href="../../../../styles/style.css">
     <script src="../../../../scripts/imageMapResizer.min.js" type="text/javascript"></script> 
+    
 </head>
 <body>
 
@@ -100,19 +101,16 @@
    document.getElementById("map").innerHTML +=
    '<area class="clickable" onclick="changeImage1();item5();" target="" alt="Parking Brake" title="Parking Brake" coords="990,883,1022,922" shape="rect" " cursor="pointer">';
   
-imageMapResize()
 
 }
 
    function item5(){
     var element = document.getElementById("item5");
     element.classList.add("highlight");
-    document.getElementById("map").innerHTML +=
+        document.getElementById("map").innerHTML +=
    '<area class="clickable" onclick="item6();"; target="" alt="Fuel shut-off valve" title="Fuel shut-off valve" coords="1041,739,1102,815" shape="rect" " cursor="pointer">';
 
-   imageMapResize()
-
-  }
+     }
 
 function item6(){
     var element = document.getElementById("item6");
