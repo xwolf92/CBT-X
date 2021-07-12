@@ -12,20 +12,18 @@
       <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
       <img id="cockpit" class="cockpit" src="../../../../images/cockpitoff.jpg" usemap="#touchcockpit">
       <map name="touchcockpit">
-      <!--
-         <area target="" alt="Parking Brake" title="Parking Brake" coords="990,783,1020,822" shape="rect" " cursor="pointer">
-         <area target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" " cursor="pointer">
-         <area target="#" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer">
+      
+         <area target="" alt="Parking Brake" title="Parking Brake" coords="990,783,1020,822" shape="rect" cursor="pointer">
+         <area target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" cursor="pointer">
+         <area target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer">
          <area target="" alt="Mixure" title="Mixure"  coords="876,1058,832,988" shape="rect" onclick="; highlight8()" cursor="pointer">
          <area target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1041,741,1102,817" shape="rect"  cursor="pointer">
          <area target="" alt="Avionics Master" title="Avionics Master"  coords="761,680,739,637" shape="rect"  cursor="pointer">
-         <area target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="539,141,553,192" shape="rect" )" cursor="pointer">
-         <area target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="571,191,555,142" shape="rect" )" cursor="pointer">
+         <area target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="539,141,553,192" shape="rect" cursor="pointer">
+         <area target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="571,191,555,142" shape="rect" cursor="pointer">
          <area target="" alt="Position Light" title="Position Light" coords="233,639,280,687" shape="rect" onclick="changeImage3(); highlight13()" cursor="pointer">
-      -->
+     
       </map>
-
-<!--DELETE <area target="#" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer"> -->
 
       <div class="tablediv">
          <table id="table" align="right">
@@ -100,68 +98,54 @@
       </div>
       <a href="../normal.html" class="btnback">BACK</a>
       <a href="../../../../menu.html" class="btnmenu">MENU</a>
-      <div class="navdiv" >
-         <a class="btnnav" id="startbtn" onclick="start()">START</a>
-         <a class="btnnav" id="nextbtngrey">NEXT</a>
-         <a class="btnnav" id="backbtngrey">BACK</a>
+      <div class="navdiv">
+         <a class="btnnav startbtn" id="startbtn" onclick="start()">START</a>
+         <a class="btnnav nextbtngrey" id="nextbtn">NEXT</a>
+         <a class="btnnav backbtngrey" id="backbtn">BACK</a>
       </div>
 
       <script>
-         function item1(){
-            var element = document.getElementById("item1");
-            element.classList.add("highlight");
-
-            var element = document.getElementById("nextbtn")
-            element.removeEventListener("click", item1,);
-            element.addEventListener("click", item2);
-         };
-
-         function item2(){
-            var element = document.getElementById("item2");
-            element.classList.add("highlight");
-
-            var element = document.getElementById("nextbtn")
-            element.removeEventListener("click", item2,);
-            element.addEventListener("click", item3);
-         };
-
-         function item3(){
-            var element = document.getElementById("item3");
-            element.classList.add("highlight");
-
-            var element = document.getElementById("nextbtn")
-            element.removeEventListener("click", item3,);
-            element.addEventListener("click", item4);
-         };
-
-         function item4(){
-            var element = document.getElementById("item4");
-            element.classList.add("highlight");
-
-            var element = document.getElementById("nextbtn");
-            element.removeEventListener("click", item4);
-            element.id = "touchbtn";
-            document.getElementById("touchbtn").innerHTML = "TOUCH";
-
-
-         };
-
-      </script>
-
-      <script>
-         imageMapResize();
          
+         const map = document.getElementById("map");
          const itemTitle = document.getElementById("itemtitle");
-         const nextBtnGrey = document.getElementById("nextbtngrey");
          const startBtn = document.getElementById("startbtn");
-         const backBtnGrey = document.getElementById("backbtngrey");
+         const nextBtn = document.getElementById("nextbtn");
+         const backBtn = document.getElementById("backbtn");
          const imgsRoute = '../../../../images/';
+         let tableTrIdArr = [];
+         let counter = 0;
+         let allowCount = true;
 
          // Aplica clase 'titlehighlight' sobre el elemento itemTitle
 
          function start() {
             itemTitle.classList.add("titlehighlight");
+            startBtn.classList.remove('startbtn');
+            startBtn.disabled;
+            const tableRows = document.getElementsByTagName("tr");
+            for (let i = 0; i < tableRows.length; i++) {
+               if(tableRows[i].id !== "") {
+                  tableTrIdArr.push(tableRows[i].id)
+               }
+            }
+            console.log(tableTrIdArr)
          };
+
+         nextBtn.addEventListener('click', (e) => {
+            allowCount && 
+               counter++;
+               console.log('ID: ' + nextBtn.id + 'Number of clicks' + counter);
+               if(counter < 4) {
+                  const element = document.getElementById(`item${counter}`);
+                  element.classList.add("highlight");
+                  console.log(tableTrIdArr)
+               } else if(counter = 4){
+                  const element = document.getElementById(`item${counter}`);
+                  element.classList.add("highlight");
+                  allowCount = false;
+                  nextBtn.innerText = "TOUCH";
+               }
+         });
 
          // Aplica clase 'Highlight' sobre elementos 1 a 16 de manera dinámica solo después de activar START Button
 
@@ -192,6 +176,8 @@
                   cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitcanopyclosed.jpg';
             }
          };
+
+         imageMapResize();
       </script>
 
    </body>

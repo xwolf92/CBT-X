@@ -222,56 +222,56 @@
     border: 5px solid rgb(42, 81, 126);
 }
 
-#startbtngrey{
+.startbtngrey{
   border: 5px solid rgb(145, 145, 145);
   color:rgb(145, 145, 145)
 }
 
-#startbtngrey:hover{
+.startbtngrey:hover{
   background-color: rgb(145, 145, 145);
   border: 5px solid rgb(145, 145, 145);
   color:rgb(255, 255, 255)
 }
 
-#nextbtngrey{
+.nextbtngrey{
   border: 5px solid rgb(145, 145, 145);
   color:rgb(145, 145, 145)
 }
 
-#nextbtngrey:hover{
+.nextbtngrey:hover{
   background-color: rgb(145, 145, 145);
   border: 5px solid rgb(145, 145, 145);
   color:rgb(255, 255, 255)
 }
 
-#nextbtn{
+.nextbtn{
   border: 5px solid rgb(42, 81, 126);
   color:rgb(42, 81, 126)
 }
 
-#nextbtn:hover{
+.nextbtn:hover{
   background-color: rgb(42, 81, 126);
   border: 5px solid rgb(42, 81, 126);
   color:rgb(255, 255, 255)
 }
 
-#touchbtn{
+.touchbtn{
   border: 5px solid rgb(145, 145, 145);
   color:rgb(145, 145, 145)
 }
 
-#touchbtn:hover{
+.touchbtn:hover{
   background-color: rgb(145, 145, 145);
   border: 5px solid rgb(145, 145, 145);
   color:rgb(255, 255, 255)
 }
 
-#backbtngrey{
+.backbtngrey{
   border: 5px solid rgb(145, 145, 145);
   color:rgb(145, 145, 145)
 }
 
-#backbtngrey:hover{
+.backbtngrey:hover{
   background-color: rgb(145, 145, 145);
   border: 5px solid rgb(145, 145, 145);
   color:rgb(255, 255, 255)
