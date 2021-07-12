@@ -13,15 +13,15 @@
       <img id="cockpit" class="cockpit" src="../../../../images/cockpitoff.jpg" usemap="#touchcockpit">
       <map name="touchcockpit">
       
-         <area target="" alt="Parking Brake" title="Parking Brake" coords="990,783,1020,822" shape="rect" cursor="pointer">
-         <area target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" cursor="pointer">
-         <area target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer">
-         <area target="" alt="Mixure" title="Mixure"  coords="876,1058,832,988" shape="rect" onclick="; highlight8()" cursor="pointer">
-         <area target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1041,741,1102,817" shape="rect"  cursor="pointer">
-         <area target="" alt="Avionics Master" title="Avionics Master"  coords="761,680,739,637" shape="rect"  cursor="pointer">
-         <area target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="539,141,553,192" shape="rect" cursor="pointer">
-         <area target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="571,191,555,142" shape="rect" cursor="pointer">
-         <area target="" alt="Position Light" title="Position Light" coords="233,639,280,687" shape="rect" onclick="changeImage3(); highlight13()" cursor="pointer">
+         <area id="cockpit1" onclick="changeImage(event)" target="" alt="Parking Brake" title="Parking Brake" coords="990,883,1022,922" shape="rect" cursor="pointer">
+         <area class="clickable" id="cockpit2" target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" cursor="pointer">
+         <area class="clickable" id="cockpit3" target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer">
+         <area class="clickable" id="cockpit4" target="" alt="Mixure" title="Mixure"  coords="876,1058,832,988" shape="rect" onclick="; highlight8()" cursor="pointer">
+         <area class="clickable" id="cockpit5" target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1041,741,1102,817" shape="rect"  cursor="pointer">
+         <area class="clickable" id="cockpit6" target="" alt="Avionics Master" title="Avionics Master"  coords="761,680,739,637" shape="rect"  cursor="pointer">
+         <area class="clickable" id="cockpit7" target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="539,141,553,192" shape="rect" cursor="pointer">
+         <area class="clickable" id="cockpit8" onclick="changeImage(event)" target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="571,191,555,142" shape="rect" cursor="pointer">
+         <area class="clickable" id="cockpit9" target="" alt="Position Light" title="Position Light" coords="233,639,280,687" shape="rect" onclick="changeImage3(); highlight13()" cursor="pointer">
      
       </map>
 
@@ -106,7 +106,6 @@
 
       <script>
          
-         const map = document.getElementById("map");
          const itemTitle = document.getElementById("itemtitle");
          const startBtn = document.getElementById("startbtn");
          const nextBtn = document.getElementById("nextbtn");
@@ -115,8 +114,6 @@
          let tableTrIdArr = [];
          let counter = 0;
          let allowCount = true;
-
-         // Aplica clase 'titlehighlight' sobre el elemento itemTitle
 
          function start() {
             itemTitle.classList.add("titlehighlight");
@@ -128,36 +125,43 @@
                   tableTrIdArr.push(tableRows[i].id)
                }
             }
-            console.log(tableTrIdArr)
+            startBtn.setAttribute('onclick','restart()');
          };
 
-         nextBtn.addEventListener('click', (e) => {
+         function restart(){
+            console.log('Restarting...')
+         };
+
+         nextBtn.addEventListener('click', () => {
             allowCount && 
                counter++;
-               console.log('ID: ' + nextBtn.id + 'Number of clicks' + counter);
+               startBtn.innerText = "RESTART";
                if(counter < 4) {
                   const element = document.getElementById(`item${counter}`);
                   element.classList.add("highlight");
-                  console.log(tableTrIdArr)
                } else if(counter = 4){
                   const element = document.getElementById(`item${counter}`);
                   element.classList.add("highlight");
                   allowCount = false;
                   nextBtn.innerText = "TOUCH";
+                  // Add clickable to the element at the touch maptag
+                  const firstClickableElement = document.getElementById("cockpit1");
+                  firstClickableElement.classList.add("clickable")
+                  // TODO: Continue from here...
                }
          });
 
          // Aplica clase 'Highlight' sobre elementos 1 a 16 de manera dinámica solo después de activar START Button
 
-         function highlight(event) {
-            const elementId = event.path[1].id;
-            const element = document.getElementById(elementId);
-            if(!itemTitle.classList.value) {
-               return
-            } else {
-               element.classList.add('highlight');
-            }
-         };
+         // function highlight(event) {
+         //    const elementId = event.path[1].id;
+         //    const element = document.getElementById(elementId);
+         //    if(!itemTitle.classList.value) {
+         //       return
+         //    } else {
+         //       element.classList.add('highlight');
+         //    }
+         // };
 
          // Substituye imagen al clickar en el elemento de la lista correspondiente
 
