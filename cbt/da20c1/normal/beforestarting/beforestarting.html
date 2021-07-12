@@ -101,7 +101,6 @@
       <div class="navdiv">
          <a class="btnnav startbtn" id="startbtn" onclick="start()">START</a>
          <a class="btnnav nextbtngrey" id="nextbtn">NEXT</a>
-         <a class="btnnav backbtngrey" id="backbtn">BACK</a>
       </div>
 
       <script>
@@ -109,7 +108,6 @@
          const itemTitle = document.getElementById("itemtitle");
          const startBtn = document.getElementById("startbtn");
          const nextBtn = document.getElementById("nextbtn");
-         const backBtn = document.getElementById("backbtn");
          const imgsRoute = '../../../../images/';
          let tableTrIdArr = [];
          let counter = 0;
@@ -118,6 +116,9 @@
          function start() {
             itemTitle.classList.add("titlehighlight");
             startBtn.classList.remove('startbtn');
+            startBtn.classList.add('startbtngrey');
+            nextBtn.classList.remove('nextbtngrey');
+            nextBtn.classList.add('nextbtn');
             startBtn.disabled;
             const tableRows = document.getElementsByTagName("tr");
             for (let i = 0; i < tableRows.length; i++) {
@@ -144,9 +145,11 @@
                   element.classList.add("highlight");
                   allowCount = false;
                   nextBtn.innerText = "TOUCH";
+                  nextBtn.classList.remove('nextbtn');
+                  nextBtn.classList.add('nextbtngrey');
                   // Add clickable to the element at the touch maptag
                   const firstClickableElement = document.getElementById("cockpit1");
-                  firstClickableElement.classList.add("clickable")
+                  firstClickableElement.classList.add("clickable");
                   // TODO: Continue from here...
                }
          });
