@@ -14,15 +14,17 @@
       <map name="touchcockpit">
       
          <area id="cockpit1" onclick="changeImage(event)" target="" alt="Parking Brake" title="Parking Brake" coords="990,883,1022,922" shape="rect" cursor="pointer">
-         <area class="clickable" id="cockpit2" target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" cursor="pointer">
-         <area class="clickable" id="cockpit3" target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect" onclick="changeImage2(); highlight11()" cursor="pointer">
-         <area class="clickable" id="cockpit4" target="" alt="Mixure" title="Mixure"  coords="876,1058,832,988" shape="rect" onclick="; highlight8()" cursor="pointer">
-         <area class="clickable" id="cockpit5" target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1041,741,1102,817" shape="rect"  cursor="pointer">
-         <area class="clickable" id="cockpit6" target="" alt="Avionics Master" title="Avionics Master"  coords="761,680,739,637" shape="rect"  cursor="pointer">
-         <area class="clickable" id="cockpit7" target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="539,141,553,192" shape="rect" cursor="pointer">
-         <area class="clickable" id="cockpit8" onclick="changeImage(event)" target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="571,191,555,142" shape="rect" cursor="pointer">
-         <area class="clickable" id="cockpit9" target="" alt="Position Light" title="Position Light" coords="233,639,280,687" shape="rect" onclick="changeImage3(); highlight13()" cursor="pointer">
+         <area id="cockpit2" onclick="continueCount(event)" target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1041,741,1102,817" shape="rect"  cursor="pointer">
+         <area id="cockpit3" onclick="changeImage(event)" target="" alt="Throttle" title="Throttle" coords="727,994,832,1038" shape="rect" cursor="pointer">
+         <area id="cockpit4" onclick="changeImage(event)" target="" alt="Mixure" title="Mixure"  coords="876,1058,832,988" shape="rect" cursor="pointer">
+         <area id="cockpit5" onclick="continueCount(event)" target="" alt="Avionics Master" title="Avionics Master"  coords="761,680,739,637" shape="rect"  cursor="pointer">
+         <area id="cockpit6" onclick="changeImage(event)" target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="715,683,678,629" shape="rect"  cursor="pointer">
+         <area id="cockpit7" onclick="continueCount(event)" target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="539,141,553,192" shape="rect" cursor="pointer">
+         <area id="cockpit8" onclick="changeImage(event)" target="" alt="Position Light" title="Position Light" coords="233,639,280,687" shape="rect"  cursor="pointer">
+         <area id="cockpit9" onclick="continueCount(event)" target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="571,191,555,142" shape="rect" cursor="pointer">
      
+         <!-- 539,141,553,192 -->
+
       </map>
 
       <div class="tablediv">
@@ -30,67 +32,67 @@
             <tr>
                <th colspan="2" id="itemtitle"><span>BEFORE STARTING ENGINE</span></th>
             </tr>
-            <tr id="item1" onclick="changeImage(event); highlight(event)">
+            <tr id="item1">
                <td><span>1. Preflight Inspection</span></td>
                <td align="right"><span>PERFORMED</span></td>
             </tr>
-            <tr id="item2" onclick="highlight(event)">
+            <tr id="item2">
                <td><span>2. Pedals</span></td>
                <td align="right"><span>ADJUST, LOCK</span></td>
             </tr>
-            <tr id="item3" onclick="highlight(event)">
+            <tr id="item3">
                <td><span>3. Rudder</span></td>
                <td align="right"><span>FREE</span></td>
             </tr>
-            <tr id="item4" onclick="highlight(event)">
+            <tr id="item4">
                <td><span>4. Safety Belts</span></td>
                <td align="right"><span>FASTEN</span></td>
             </tr>
-            <tr id="item5" onclick="highlight(event)">
+            <tr id="item5">
                <td><span>5. Parking Brake</span></td>
                <td align="right"><span>ON</span></td>
             </tr>
-            <tr id="item6" onclick="highlight(event)">
+            <tr id="item6">
                <td><span>6. Fuel Shut-off Valve</span></td>
                <td align="right"><span>OPEN (Pushed)</span></td>
             </tr>
-            <tr id="item7" onclick="highlight(event)">
+            <tr id="item7">
                <td><span>7. Thottle</span></td>
                <td align="right"><span>IDLE</span></td>
             </tr>
-            <tr id="item8" onclick="changeImage(event); highlight(event)">
+            <tr id="item8">
                <td><span>8. Mixture</span></td>
                <td align="right"><span>FULL RICH</span></td>
             </tr>
-            <tr id="item9" onclick="highlight(event)">
+            <tr id="item9">
                <td><span>9. Firction Device of Throttle Quadrant</span></td>
                <td align="right"><span>ADJUST</span></td>
             </tr>
-            <tr id="item10" onclick="highlight(event)">
+            <tr id="item10">
                <td><span>10. Avionics Master Switch</span></td>
                <td align="right"><span>OFF</span></td>
             </tr>
-            <tr id="item11" onclick="changeImage(event); highlight(event)">
+            <tr id="item11">
                <td><span>11. BAT/GEN Master Switch</span></td>
                <td align="right"><span>ON</span></td>
             </tr>
-            <tr id="item12" onclick="highlight(event)">
+            <tr id="item12">
                <td><span>12. Generator Warning Light</span></td>
                <td align="right"><span>ILLUMINATED</span></td>
             </tr>
-            <tr id="item13" onclick="highlight(event)">
+            <tr id="item13">
                <td><span>13. Exterior Lights</span></td>
                <td align="right"><span>POSITION ON</span></td>
             </tr>
-            <tr id="item14" onclick="highlight(event)">
+            <tr id="item14">
                <td><span>14. Instrument Panel Lighting</span></td>
                <td align="right"><span>A/R</span></td>
             </tr>
-            <tr id="item15" onclick="changeImage(event); highlight(event)">
+            <tr id="item15">
                <td><span>15. Canopy</span></td>
                <td align="right"><span>CLOSE AND SECURE</span></td>
             </tr>
-            <tr id="item16" onclick="highlight(event)">
+            <tr id="item16">
                <td><span>16. Canopy Unlock Warning Light</span></td>
                <td align="right"><span>OFF</span></td>
             </tr>
@@ -111,80 +113,167 @@
          const imgsRoute = '../../../../images/';
          let tableTrIdArr = [];
          let counter = 0;
-         let allowCount = true;
+         let allowCount = false;
 
          function start() {
-            itemTitle.classList.add("titlehighlight");
-            startBtn.classList.remove('startbtn');
-            startBtn.classList.add('startbtngrey');
-            nextBtn.classList.remove('nextbtngrey');
-            nextBtn.classList.add('nextbtn');
-            startBtn.disabled;
-            const tableRows = document.getElementsByTagName("tr");
-            for (let i = 0; i < tableRows.length; i++) {
-               if(tableRows[i].id !== "") {
-                  tableTrIdArr.push(tableRows[i].id)
+            if(!allowCount) {
+               itemTitle.classList.add("titlehighlight");
+               startBtn.classList.remove('startbtn');
+               startBtn.classList.add('startbtngrey');
+               nextBtn.classList.remove('nextbtngrey');
+               nextBtn.classList.add('nextbtn');
+               const tableRows = document.getElementsByTagName("tr");
+               for (let i = 0; i < tableRows.length; i++) {
+                  if(tableRows[i].id !== "") {
+                     tableTrIdArr.push(tableRows[i].id)
+                  }
                }
+               startBtn.setAttribute('onclick','restart()');
+               allowCount = true;
             }
-            startBtn.setAttribute('onclick','restart()');
          };
 
          function restart(){
             console.log('Restarting...')
+            counter = 0;
+            const tableRows = document.getElementsByTagName("tr");
+            const tableHeader = document.getElementById("itemtitle");
+            for (let i = 0; i < tableRows.length; i++) {
+               tableRows[i].classList.remove("highlight");
+            }
+            tableHeader.classList.remove("titlehighlight");
+            const cockpit = document.getElementById("cockpit");
+            cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitoff.jpg';
+            startBtn.innerText = "START";
+            startBtn.classList.remove('startbtngrey');
+            startBtn.classList.add('startbtn');
+            nextBtn.innerText = "NEXT";
+            nextBtn.classList.remove('nextbtn');
+            nextBtn.classList.add('nextbtngrey');
+            startBtn.setAttribute('onclick','start()');
          };
 
          nextBtn.addEventListener('click', () => {
-            allowCount && 
+            if(allowCount) { 
                counter++;
+               const element = document.getElementById(`item${counter}`);
                startBtn.innerText = "RESTART";
                if(counter < 4) {
-                  const element = document.getElementById(`item${counter}`);
                   element.classList.add("highlight");
-               } else if(counter = 4){
-                  const element = document.getElementById(`item${counter}`);
+               } else if(counter === 4){
                   element.classList.add("highlight");
                   allowCount = false;
                   nextBtn.innerText = "TOUCH";
                   nextBtn.classList.remove('nextbtn');
                   nextBtn.classList.add('nextbtngrey');
-                  // Add clickable to the element at the touch maptag
                   const firstClickableElement = document.getElementById("cockpit1");
                   firstClickableElement.classList.add("clickable");
-                  // TODO: Continue from here...
+               } else if(counter === 5){
+                  allowCount = false;
+               } else if(counter === 9){
+                  element.classList.add("highlight");
+                  const fifthClickableElement = document.getElementById("cockpit5");
+                  fifthClickableElement.classList.add("clickable");
+                  allowCount = false;
+                  nextBtn.innerText = "TOUCH";
+                  nextBtn.classList.remove('nextbtn');
+                  nextBtn.classList.add('nextbtngrey');
+               } else if(counter === 14) {
+                  element.classList.add("highlight");
+               } else if(counter === 15) {
+                  element.classList.add("highlight");
+                  changeImage(event)
                }
+            }
          });
 
-         // Aplica clase 'Highlight' sobre elementos 1 a 16 de manera dinámica solo después de activar START Button
-
-         // function highlight(event) {
-         //    const elementId = event.path[1].id;
-         //    const element = document.getElementById(elementId);
-         //    if(!itemTitle.classList.value) {
-         //       return
-         //    } else {
-         //       element.classList.add('highlight');
-         //    }
-         // };
-
-         // Substituye imagen al clickar en el elemento de la lista correspondiente
+         function continueCount(event) {
+            if(!allowCount){
+               counter++;
+               const elementId = event.path[0].attributes.id.nodeValue;
+               const element = document.getElementById(elementId);
+               element.classList.remove("clickable");
+               element.removeAttribute('onclick');
+               document.getElementById(`item${counter}`).classList.add("highlight");
+               if(counter === 6) {
+                  const thirdClickableElement = document.getElementById("cockpit3");
+                  thirdClickableElement.classList.add("clickable");
+               } else if(counter === 10) {
+                  document.getElementById(`item${counter}`).classList.add("highlight");
+                  const sixthClickableElement = document.getElementById("cockpit6");
+                  sixthClickableElement.classList.add("clickable");
+               } else if(counter === 12) {
+                  document.getElementById(`item${counter}`).classList.add("highlight");
+                  const eigthClickableElement = document.getElementById("cockpit6");
+                  eigthClickableElement.classList.add("clickable");
+               } else if(counter === 16) {
+                  allowCount = false;
+               }
+            } else {
+               return;
+            }
+         };
 
          function changeImage(event) {
+            allowCount = true;
+            counter++;
             const cockpit = document.getElementById("cockpit");
             let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-            const elementId = event.path[1].id;
+            const elementId = event.path[0].attributes.id.nodeValue;
             const element = document.getElementById(elementId);
-            if (cockpitImgRoute === imgsRoute + 'cockpitoff.jpg' && elementId === 'item1'){
+            if (cockpitImgRoute === imgsRoute + 'cockpitoff.jpg' && elementId === 'cockpit1'){
+                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitparking.jpg';
+                  element.classList.remove("clickable");
+                  element.removeAttribute('onclick');
+                  document.getElementById(`item${counter}`).classList.add("highlight");
+                  const secondClickableElement = document.getElementById("cockpit2");
+                  secondClickableElement.classList.add("clickable");
+                  allowCount = false;
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitparking.jpg' && elementId === 'cockpit3'){
+                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitthrottle.jpg';
+                  element.classList.remove("clickable");
+                  element.removeAttribute('onclick');
+                  document.getElementById(`item${counter}`).classList.add("highlight");
+                  const fourthClickableElement = document.getElementById("cockpit4");
+                  fourthClickableElement.classList.add("clickable");
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitthrottle.jpg' && elementId === 'cockpit4'){
                   cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmixture.jpg';
-            } else if(cockpitImgRoute === imgsRoute + 'cockpitmixture.jpg' && elementId === 'item8'){
+                  element.classList.remove("clickable");
+                  element.removeAttribute('onclick');
+                  document.getElementById(`item${counter}`).classList.add("highlight");
+                  nextBtn.innerText = "NEXT";
+                  nextBtn.classList.remove('nextbtngrey');
+                  nextBtn.classList.add('nextbtn');
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitmixture.jpg' && elementId === 'cockpit6'){
                   cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmaster.jpg';
-            } else if(cockpitImgRoute === imgsRoute + 'cockpitmaster.jpg' && elementId === 'item11'){
+                  element.classList.remove("clickable");
+                  element.removeAttribute('onclick');
+                  document.getElementById(`item${counter}`).classList.add("highlight");
+                  const seventhClickableElement = document.getElementById("cockpit7");
+                  seventhClickableElement.classList.add("clickable");
+                  allowCount = false;
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitmaster.jpg' && elementId === 'cockpit8') {
                   cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitposition.jpg';
-            } else if(cockpitImgRoute === imgsRoute + 'cockpitposition.jpg' && elementId === 'item15'){
-                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitcanopyclosed.jpg';
+                  element.classList.remove("clickable");
+                  element.removeAttribute('onclick');
+                  document.getElementById(`item${counter}`).classList.add("highlight");
+                  nextBtn.innerText = "NEXT";
+                  nextBtn.classList.remove('nextbtngrey');
+                  nextBtn.classList.add('nextbtn');
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitposition.jpg') {
+                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitcanopy.jpg';
+                  nextBtn.innerText = "TOUCH";
+                  nextBtn.classList.remove('nextbtn');
+                  nextBtn.classList.add('nextbtngrey');
+                  const ninthClickableElement = document.getElementById("cockpit9");
+                  ninthClickableElement.classList.add("clickable");
+                  counter--;
+                  allowCount = false;
             }
          };
 
          imageMapResize();
+         
       </script>
 
    </body>
