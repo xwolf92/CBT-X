@@ -16,7 +16,7 @@
          <area id="cockpit1" onclick="changeImage(event)" target="" alt="Parking Brake" title="Parking Brake" coords="991,892,1019,931" shape="rect" cursor="pointer">
          <area id="cockpit2" onclick="continueCount(event)" target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1042,740,1102,815" shape="rect"  cursor="pointer">
          <area id="cockpit3" onclick="changeImage(event)" target="" alt="Throttle" title="Throttle" coords="725,972,832,1015" shape="rect" cursor="pointer">
-         <area id="cockpit4" onclick="changeImage(event)" target="" alt="Mixure" title="Mixure"  coords="834,912,881,987" shape="rect" cursor="pointer">
+         <area id="cockpit4" onclick="changeImage(event)" target="" alt="Mixture" title="Mixture"  coords="834,912,881,987" shape="rect" cursor="pointer">
          <area id="cockpit5" onclick="continueCount(event)" target="" alt="Avionics Master" title="Avionics Master"  coords="739,637,759,683" shape="rect"  cursor="pointer">
          <area id="cockpit6" onclick="changeImage(event)" target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="676,627,715,685" shape="rect"  cursor="pointer">
          <area id="cockpit7" onclick="continueCount(event)" target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="537,141,557,192" shape="rect" cursor="pointer">
@@ -57,7 +57,7 @@
                <td align="right"><span>OPEN (Pushed)</span></td>
             </tr>
             <tr id="item7">
-               <td><span>7. Thottle</span></td>
+               <td><span>7. Throttle</span></td>
                <td align="right"><span>IDLE</span></td>
             </tr>
             <tr id="item8">
@@ -65,7 +65,7 @@
                <td align="right"><span>FULL RICH</span></td>
             </tr>
             <tr id="item9">
-               <td><span>9. Firction Device of Throttle Quadrant</span></td>
+               <td><span>9. Friction Device of Throttle Quadrant</span></td>
                <td align="right"><span>ADJUST</span></td>
             </tr>
             <tr id="item10">
@@ -162,13 +162,11 @@
                   nextBtn.classList.add('nextbtngrey');
                   const firstClickableElement = document.getElementById("cockpit1");
                   firstClickableElement.classList.add("clickable");
-               } else if(counter === 5){
-                  allowCount = false;
                } else if(counter === 9){
                   element.classList.add("highlight");
+                  allowCount = false;
                   const fifthClickableElement = document.getElementById("cockpit5");
                   fifthClickableElement.classList.add("clickable");
-                  allowCount = false;
                   nextBtn.innerText = "TOUCH";
                   nextBtn.classList.remove('nextbtn');
                   nextBtn.classList.add('nextbtngrey');
@@ -196,10 +194,12 @@
                   document.getElementById(`item${counter}`).classList.add("highlight");
                   const sixthClickableElement = document.getElementById("cockpit6");
                   sixthClickableElement.classList.add("clickable");
+                  allowCount = false;
                } else if(counter === 12) {
                   document.getElementById(`item${counter}`).classList.add("highlight");
                   const eigthClickableElement = document.getElementById("cockpit8");
                   eigthClickableElement.classList.add("clickable");
+                  allowCount = false;
                } else if(counter === 16) {
                   allowCount = false;
                }
