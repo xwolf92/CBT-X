@@ -115,6 +115,12 @@
          let counter = 0;
          let allowCount = false;
 
+         if(sessionStorage.getItem('reloading') === "true") {
+            sessionStorage.clear();
+            start();
+            startBtn.innerText = "RESTART";
+         }
+
          function start() {
             if(!allowCount) {
                itemTitle.classList.add("titlehighlight");
@@ -135,30 +141,18 @@
 
          function restart(){
             console.log('Restarting...')
-            counter = 0;
-            const tableRows = document.getElementsByTagName("tr");
-            const tableHeader = document.getElementById("itemtitle");
-            for (let i = 0; i < tableRows.length; i++) {
-               tableRows[i].classList.remove("highlight");
-            }
-            tableHeader.classList.remove("titlehighlight");
-            const cockpit = document.getElementById("cockpit");
-            cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitoff.jpg';
-            startBtn.innerText = "START";
-            startBtn.classList.remove('startbtngrey');
-            startBtn.classList.add('startbtn');
-            nextBtn.innerText = "NEXT";
-            nextBtn.classList.remove('nextbtn');
-            nextBtn.classList.add('nextbtngrey');
-            startBtn.setAttribute('onclick','start()');
+            sessionStorage.setItem('reloading','true');
+            window.location.reload();
          };
 
          nextBtn.addEventListener('click', () => {
             if(allowCount) { 
                counter++;
                const element = document.getElementById(`item${counter}`);
-               startBtn.innerText = "RESTART";
-               if(counter < 4) {
+               if(counter === 1) {
+                  startBtn.innerText = "RESTART";
+                  element.classList.add("highlight");
+               } else if(counter < 4) {
                   element.classList.add("highlight");
                } else if(counter === 4){
                   element.classList.add("highlight");
@@ -236,6 +230,7 @@
                   document.getElementById(`item${counter}`).classList.add("highlight");
                   const fourthClickableElement = document.getElementById("cockpit4");
                   fourthClickableElement.classList.add("clickable");
+                  allowCount = false;
             } else if(cockpitImgRoute === imgsRoute + 'cockpitthrottle.jpg' && elementId === 'cockpit4'){
                   cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmixture.jpg';
                   element.classList.remove("clickable");
