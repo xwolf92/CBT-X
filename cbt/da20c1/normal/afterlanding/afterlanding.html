@@ -184,7 +184,7 @@
          function continueCount(event) {
             if(!allowCount){
                counter++;
-               const elementId = event.composedPath()[0].attributes.id.nodeValue;
+               const elementId = event.path[0].attributes.id.nodeValue;
                const element = document.getElementById(elementId);
                element.classList.remove("clickable");
                element.removeAttribute('onclick');
@@ -216,7 +216,7 @@
             counter++;
             const cockpit = document.getElementById("cockpit");
             let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-            const elementId = event.composedPath()[0].attributes.id.nodeValue;
+            const elementId = event.path[0].attributes.id.nodeValue;
             const element = document.getElementById(elementId);
             if (cockpitImgRoute === imgsRoute + 'cockpitoff.jpg' && elementId === 'cockpit1'){
                   cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitparking.jpg';

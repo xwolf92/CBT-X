@@ -244,6 +244,70 @@
   color:rgb(255, 255, 255)
 }
 
+.rightbtn{
+  display: grid;
+  position: absolute;
+  right: 10vh;
+  top: 37vh;
+  color: rgb(42, 81, 126);
+  background: #ffffff;
+  height: 10vh;
+  width: 10vh;
+  border: 5px solid rgb(42, 81, 126);
+  border-radius: 50%;
+  text-decoration: none;
+  padding: 0px;
+  margin-top: 4vh;
+  margin-right: 3vh;
+  text-align: center;
+  align-content: center;
+  vertical-align: top;
+  justify-content: center;
+  font-size: 55px;
+  font-weight: bold;
+  transition: .4s;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 2px;
+}
+
+.rightbtn:hover{
+  background-color: rgb(42, 81, 126);
+  border: 5px solid rgb(42, 81, 126);
+  color:rgb(255, 255, 255)
+}
+
+.leftbtn{
+  display: grid;
+  position: absolute;
+  left: 10vh;
+  top: 37vh;
+  color: rgb(42, 81, 126);
+  background: #ffffff;
+  height: 10vh;
+  width: 10vh;
+  border: 5px solid rgb(42, 81, 126);
+  border-radius: 50%;
+  text-decoration: none;
+  padding: 0px;
+  margin-top: 4vh;
+  margin-right: 3vh;
+  text-align: center;
+  align-content: center;
+  vertical-align: top;
+  justify-content: center;
+  font-size: 55px;
+  font-weight: bold;
+  transition: .4s;
+  font-family: 'Open Sans Condensed', sans-serif;
+  letter-spacing: 2px;
+}
+
+.leftbtn:hover{
+  background-color: rgb(42, 81, 126);
+  border: 5px solid rgb(42, 81, 126);
+  color:rgb(255, 255, 255)
+}
+
 .nextbtn{
   border: 5px solid rgb(42, 81, 126);
   color:rgb(42, 81, 126)
