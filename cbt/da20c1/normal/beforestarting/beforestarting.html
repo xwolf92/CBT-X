@@ -132,7 +132,7 @@
             startBtn.innerText = "RESTART";
          }
 
-         // Starts The Activity
+         // Starts The CBT Activity
          function start() {
             if(!allowCount) {
                itemTitle.classList.add("titlehighlight");
@@ -152,7 +152,7 @@
             }
          };
 
-         // Restarts The Activity
+         // Restarts The CBT Activity
          function restart(){
             console.log('Restarting...')
             sessionStorage.setItem('reloading','true');
@@ -230,7 +230,9 @@
                A continuación, desarrollar las condiciones (en función del valor de counter) para ejecutar las funciones deseadas en cada caso
                */
                if(counter === 1) {
+                  // Changes Buttons Text. The functions accepts two params (HTML Element, String)
                   changeInnerText(startBtn, "RESTART");
+                  // Applies 'highlight' class to selected HTML Element
                   highlightRow(tableElement);
                } else if(counter < 4) {
                   highlightRow(tableElement);
@@ -238,10 +240,10 @@
                   highlightRow(tableElement);
                   // Block the counter to avoid nextBtn to increase the counter 
                   allowCount = false;
-                  // Changes Buttons Text. The functions accepts two params (HTML Element, String)
                   changeInnerText(nextBtn, "TOUCH");
-                  // Temporally disable all styles associated to nextBtn
+                  // Temporally disables all styles associated to nextBtn
                   disableBtn(nextBtn);
+                  // Adds clickable functionalities to maptag elements
                   setMapTagEvent(0, 'changeImage(event)');
                } else if(counter === 9) {
                   highlightRow(tableElement);
@@ -253,6 +255,7 @@
                   highlightRow(tableElement);
                } else if(counter === 15) {
                   highlightRow(tableElement);
+                  // Invokes Main Action changeImage(event)
                   changeImage(event);
                }
             }
@@ -262,12 +265,13 @@
          function continueCount(event) {
             if(!allowCount) {
                counter++;
-               const elementId = event.composedPath()[0].attributes.id.nodeValue;
-               const element = document.getElementById(elementId);
-               element.classList.remove("clickable");
-               element.removeAttribute('onclick');
                const tableElement = document.getElementById(`item${counter}`);
                highlightRow(tableElement);
+               const elementId = event.composedPath()[0].attributes.id.nodeValue;
+               const element = document.getElementById(elementId);
+               // Same as unsetMapTagEvent for each element
+               element.classList.remove("clickable");
+               element.removeAttribute('onclick');
                if(counter === 6) {
                   setMapTagEvent(2, 'changeImage(event)');
                } else if(counter === 10) {
