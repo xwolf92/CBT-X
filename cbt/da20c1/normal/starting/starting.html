@@ -1,269 +1,413 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8" />
-      <title>CBT-X</title>
-      <link rel="shortcut icon" href="../../../../favicon.ico" />
-      <link rel="stylesheet" href="../../../../styles/style.css">
-      <script src="../../../../scripts/imageMapResizer.min.js"></script>
-   </head>
-   <body>
+	<head>
+		<meta charset="utf-8" />
+		<title>CBT-X</title>
+		<link rel="shortcut icon" href="../../../../favicon.ico" />
+		<link rel="stylesheet" href="../../../../styles/style.css" />
+		<script src="../../../../scripts/imageMapResizer.min.js"></script>
+	</head>
+	<body>
+		<img
+			src="../../../../images/CESDAlogo.png"
+			class="topright"
+			style="height: 100px"
+		/>
+		<img
+			id="cockpit"
+			class="cockpit"
+			src="../../../../images/cockpitcanopy.jpg"
+			usemap="#touchcockpit"
+		/>
+		<map name="touchcockpit">
+			<area
+				id="cockpit0"
+				target=""
+				alt="Fuel Pump"
+				title="Fuel Pump"
+				coords="790,639,805,681"
+				shape="rect"
+				cursor="pointer"
+			/>
+			<area
+				id="cockpit1"
+				target=""
+				alt="Fuel Prime"
+				title="Fuel Prime"
+				coords="565,639,614,689"
+				shape="rect"
+				cursor="pointer"
+			/>
+			<area
+				id="cockpit2"
+				target=""
+				alt="Throttle"
+				title="Throttle"
+				coords="725,996,831,1036"
+				shape="rect"
+				cursor="pointer"
+			/>
+			<area
+				id="cockpit3"
+				target=""
+				alt="Starter"
+				title="Starter"
+				coords="490,662,26"
+				shape="circle"
+				cursor="pointer"
+			/>
+			<area
+				id="cockpit4"
+				target=""
+				alt="Throttle"
+				title="Throttle"
+				coords="729,995,831,1036"
+				shape="rect"
+				cursor="pointer"
+			/>
+			<area
+				id="cockpit5"
+				target=""
+				alt="Oil Press"
+				title="Oil Press"
+				coords="1343,523,51"
+				shape="circle"
+				cursor="pointer"
+			/>
+			<area
+				id="cockpit6"
+				target=""
+				alt="Fuel Prime"
+				title="Fuel Prime"
+				coords="565,639,614,689"
+				shape="rect"
+				cursor="pointer"
+			/>
+			<area
+				id="cockpit7"
+				target=""
+				alt="GEN Warning Light"
+				title="GEN Warning Light"
+				coords="537,141,557,192"
+				shape="rect"
+				cursor="pointer"
+			/>
+			<area
+				id="cockpit8"
+				target=""
+				alt="Starter Warning Light"
+				title="Starter Warning Light"
+				coords="578,143,595,195"
+				shape="rect"
+				cursor="pointer"
+			/>
+		</map>
 
-      <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
-      <img id="cockpit" class="cockpit" src="../../../../images/cockpitcanopy.jpg" usemap="#touchcockpit">
-      <map name="touchcockpit">
-      
-         <area id="cockpit1" target="" alt="Fuel Pump" title="Fuel Pump" coords="790,639,805,681" shape="rect" cursor="pointer">
-         <area id="cockpit2" target="" alt="Fuel Prime" title="Fuel Prime"  coords="565,639,614,689" shape="rect"  cursor="pointer">
-         <area id="cockpit3" target="" alt="Throttle" title="Throttle" coords="725,996,831,1036" shape="rect" cursor="pointer">
-         <area id="cockpit4" target="" alt="Starter" title="Starter"  coords="490,662,26" shape="circle" cursor="pointer">
-         <area id="cockpit5" target="" alt="Throttle" title="Throttle"  coords="729,995,831,1036" shape="rect"  cursor="pointer">
-         <area id="cockpit6" target="" alt="Oil Press" title="Oil Press" coords="1343,523,51" shape="circle"  cursor="pointer">
-         <area id="cockpit7" target="" alt="Fuel Prime" title="Fuel Prime"  coords="565,639,614,689" shape="rect" cursor="pointer">
-         <area id="cockpit8" target="" alt="GEN Warning Light" title="GEN Warning Light" coords="537,141,557,192" shape="rect"  cursor="pointer">
-         <area id="cockpit9" target="" alt="Starter Warning Light" title="Starter Warning Light"  coords="578,143,595,195" shape="rect" cursor="pointer">
-     
-         <!-- 539,141,553,192 -->
+		<div class="tablediv">
+			<table id="table" align="right">
+				<tr>
+					<th colspan="2" id="itemtitle"><span>STARTING ENGINE</span></th>
+				</tr>
+				<tr id="item1">
+					<td><span>1. Fuel Pump</span></td>
+					<td align="right"><span>ON</span></td>
+				</tr>
+				<tr id="item2">
+					<td><span>2. Fuel Prime</span></td>
+					<td align="right"><span>ON</span></td>
+				</tr>
+				<tr id="item3">
+					<td><span>3. Throttle</span></td>
+					<td align="right"><span>FULL (10-15 sec.)</span></td>
+				</tr>
+				<tr id="item4">
+					<td><span>4. Throttle</span></td>
+					<td align="right"><span>IDLE to 1 cm.</span></td>
+				</tr>
+				<tr id="item5">
+					<td><span>5. Toe Brakes</span></td>
+					<td align="right"><span>Hold</span></td>
+				</tr>
+				<tr id="item6">
+					<td><span>6. Propeller Area</span></td>
+					<td align="right"><span>Clear</span></td>
+				</tr>
+				<tr id="item7">
+					<td><span>7. Ignition Switch</span></td>
+					<td align="right"><span>START (10 secs. Max)</span></td>
+				</tr>
+				<tr id="item8">
+					<td><span>8. Starter Warning Light</span></td>
+					<td align="right"><span>Illuminated while in START pos.</span></td>
+				</tr>
+				<tr id="item9">
+					<td><span>9. Throttle</span></td>
+					<td align="right"><span>1000 RPM</span></td>
+				</tr>
+				<tr id="item10">
+					<td><span>10. Oil Pressure</span></td>
+					<td align="right"><span>Check</span></td>
+				</tr>
+				<tr id="item11">
+					<td><span>11. Fuel Prime</span></td>
+					<td align="right"><span>OFF</span></td>
+				</tr>
+				<tr id="item12">
+					<td><span>12. GEN Warning Light</span></td>
+					<td align="right"><span>Check OFF</span></td>
+				</tr>
+				<tr id="item13">
+					<td><span>13. Starter Warning Light</span></td>
+					<td align="right"><span>Check OFF</span></td>
+				</tr>
+			</table>
+		</div>
+		<a href="../normal.html" class="btnback">BACK</a>
+		<a href="../../../../menu.html" class="btnmenu">MENU</a>
+		<div class="navdiv">
+			<a class="btnnav startbtn" id="startbtn" onclick="start()">START</a>
+			<a class="btnnav nextbtngrey" id="nextbtn">NEXT</a>
+		</div>
 
-      </map>
+		<script>
+			// Main variables declaration
+			const itemTitle = document.getElementById("itemtitle");
+			const startBtn = document.getElementById("startbtn");
+			const nextBtn = document.getElementById("nextbtn");
+			const imgsRoute = "../../../../images/";
+			let counter = 0;
+			let allowCount = false;
+			let tableTrIdArr = [];
+			let clickableAreaElements = [];
 
-      <div class="tablediv">
-         <table id="table" align="right">
-            <tr>
-               <th colspan="2" id="itemtitle"><span>STARTING ENGINE</span></th>
-            </tr>
-            <tr id="item1">
-               <td><span>1. Fuel Pump</span></td>
-               <td align="right"><span>ON</span></td>
-            </tr>
-            <tr id="item2">
-               <td><span>2. Fuel Prime</span></td>
-               <td align="right"><span>ON</span></td>
-            </tr>
-            <tr id="item3">
-               <td><span>3. Throttle</span></td>
-               <td align="right"><span>FULL (10-15 sec.)</span></td>
-            </tr>
-            <tr id="item4">
-               <td><span>4. Throttle</span></td>
-               <td align="right"><span>IDLE to 1 cm.</span></td>
-            </tr>
-            <tr id="item5">
-               <td><span>5. Toe Brakes</span></td>
-               <td align="right"><span>Hold</span></td>
-            </tr>
-            <tr id="item6">
-               <td><span>6. Propeller Area</span></td>
-               <td align="right"><span>Clear</span></td>
-            </tr>
-            <tr id="item7">
-               <td><span>7. Ignition Switch</span></td>
-               <td align="right"><span>START (10 secs. Max)</span></td>
-            </tr>
-            <tr id="item8">
-               <td><span>8. Starter Warning Light</span></td>
-               <td align="right"><span>Illuminated while in START pos.</span></td>
-            </tr>
-            <tr id="item9">
-               <td><span>9. Throttle</span></td>
-               <td align="right"><span>1000 RPM</span></td>
-            </tr>
-            <tr id="item10">
-               <td><span>10. Oil Pressure</span></td>
-               <td align="right"><span>Check</span></td>
-            </tr>
-            <tr id="item11">
-               <td><span>11. Fuel Prime</span></td>
-               <td align="right"><span>OFF</span></td>
-            </tr>
-            <tr id="item12">
-               <td><span>12. GEN Warning Light</span></td>
-               <td align="right"><span>Check OFF</span></td>
-            </tr>
-            <tr id="item13">
-               <td><span>13. Starter Warning Light</span></td>
-               <td align="right"><span>Check OFF</span></td>
-            </tr>
-          </table>
-      </div>
-      <a href="../normal.html" class="btnback">BACK</a>
-      <a href="../../../../menu.html" class="btnmenu">MENU</a>
-      <div class="navdiv">
-         <a class="btnnav startbtn" id="startbtn" onclick="start()">START</a>
-         <a class="btnnav nextbtngrey" id="nextbtn">NEXT</a>
-      </div>
+			// Checks area HTML elements and stores each area id in the 'clickableAreaElements' Array
+			const areaElements = document.getElementsByTagName("area");
+			for (let i = 0; i < areaElements.length; i++) {
+				if (areaElements[i].id !== "") {
+					clickableAreaElements.push(areaElements[i]);
+				}
+			}
+			console.log(clickableAreaElements);
 
-      <script>
-         
-         const itemTitle = document.getElementById("itemtitle");
-         const startBtn = document.getElementById("startbtn");
-         const nextBtn = document.getElementById("nextbtn");
-         const imgsRoute = '../../../../images/';
-         let tableTrIdArr = [];
-         let counter = 0;
-         let allowCount = false;
+			// Useful at Restart to acknowledge The CBT Activity has restarted on Page Reload
+			if (sessionStorage.getItem("reloading") === "true") {
+				sessionStorage.clear();
+				start();
+				startBtn.innerText = "RESTART";
+			}
 
-         if(sessionStorage.getItem('reloading') === "true") {
-            sessionStorage.clear();
-            start();
-            startBtn.innerText = "RESTART";
-         }
+			// Restarts The CBT Activity
+			function restart() {
+				console.log("Restarting...");
+				sessionStorage.setItem("reloading", "true");
+				window.location.reload();
+			}
 
-         function start() {
-            if(!allowCount) {
-               itemTitle.classList.add("titlehighlight");
-               startBtn.classList.remove('startbtn');
-               startBtn.classList.add('startbtngrey');
-               nextBtn.innerText = "TOUCH";
-               const tableRows = document.getElementsByTagName("tr");
-               for (let i = 0; i < tableRows.length; i++) {
-                  if(tableRows[i].id !== "") {
-                     tableTrIdArr.push(tableRows[i].id)
-                  }
-               }
-               startBtn.setAttribute('onclick','restart()');
-               allowCount = true;
-            }
-         };
+			/* 
+            Changes Inner Text on a selected HTML Element
+               Invoke example: changeInnerText(startBtn, "RESTART")
+         */
+			function changeInnerText(element, string) {
+				element.innerText = string;
+			}
 
-         function restart(){
-            console.log('Restarting...')
-            sessionStorage.setItem('reloading','true');
-            window.location.reload();
-         };
+			/* 
+            Applies 'highlight' class to selected HTML Element 
+               Invoke example: highlightRow(tableElement)
+         */
+			function highlightRow(element) {
+				element.classList.add("highlight");
+			}
 
-         nextBtn.addEventListener('click', () => {
-            if(allowCount) { 
-               counter++;
-               const element = document.getElementById(`item${counter}`);
-               if(counter === 2) {
-                  startBtn.innerText = "RESTART";
-                  element.classList.add("highlight");
-               } else if(counter < 4) {
-                  element.classList.add("highlight");
-               } else if(counter === 4){
-                  element.classList.add("highlight");
-                  allowCount = false;
-                  nextBtn.innerText = "TOUCH";
-                  nextBtn.classList.remove('nextbtn');
-                  nextBtn.classList.add('nextbtngrey');
-                  const firstClickableElement = document.getElementById("cockpit1");
-                  firstClickableElement.classList.add("clickable");
-                  firstClickableElement.setAttribute('onclick','changeImage(event)');
-               } else if(counter === 9){
-                  element.classList.add("highlight");
-                  allowCount = false;
-                  const fifthClickableElement = document.getElementById("cockpit5");
-                  fifthClickableElement.classList.add("clickable");
-                  fifthClickableElement.setAttribute('onclick','continueCount(event)');
-                  nextBtn.innerText = "TOUCH";
-                  nextBtn.classList.remove('nextbtn');
-                  nextBtn.classList.add('nextbtngrey');
-               } else if(counter === 14) {
-                  element.classList.add("highlight");
-               } else if(counter === 15) {
-                  element.classList.add("highlight");
-                  changeImage(event)
-               }
-            }
-         });
+			/* 
+            Modifies 'btn' styles adding/removing classes to selected Button
+               Invoke example: disableBtn(nextBtn)
+         */
+			function disableBtn(element) {
+				const lowerCaseName = element.id;
+				element.classList.remove(lowerCaseName);
+				element.classList.add(`${lowerCaseName}grey`);
+			}
 
-         function continueCount(event) {
-            if(!allowCount){
-               counter++;
-               const elementId = event.composedPath()[0].attributes.id.nodeValue;
-               const element = document.getElementById(elementId);
-               element.classList.remove("clickable");
-               element.removeAttribute('onclick');
-               document.getElementById(`item${counter}`).classList.add("highlight");
-               if(counter === 1) {
-                  const thirdClickableElement = document.getElementById("cockpit1");
-                  thirdClickableElement.classList.add("clickable");
-                  thirdClickableElement.setAttribute('onclick','changeImage(event)');
-               } else if(counter === 10) {
-                  document.getElementById(`item${counter}`).classList.add("highlight");
-                  const sixthClickableElement = document.getElementById("cockpit6");
-                  sixthClickableElement.classList.add("clickable");
-                  sixthClickableElement.setAttribute('onclick','changeImage(event)');
-                  allowCount = false;
-               } else if(counter === 12) {
-                  document.getElementById(`item${counter}`).classList.add("highlight");
-                  const eigthClickableElement = document.getElementById("cockpit8");
-                  eigthClickableElement.classList.add("clickable");
-                  eigthClickableElement.setAttribute('onclick','changeImage(event)');
-                  allowCount = false;
-               } else if(counter === 16) {
-                  allowCount = false;
-               }
-            }
-         };
+			/*
+            Modifies 'btn' styles adding/removing classes to selected Button
+               Invoke example: enableBtn(nextBtn)
+         */
+			function enableBtn(element) {
+				const lowerCaseName = element.id;
+				element.classList.remove(`${lowerCaseName}grey`);
+				element.classList.add(lowerCaseName);
+			}
 
-         function changeImage(event) {
-            allowCount = true;
-            counter++;
-            const cockpit = document.getElementById("cockpit");
-            let cockpitImgRoute = cockpit.attributes.src.nodeValue;
-            const elementId = event.composedPath()[0].attributes.id.nodeValue;
-            const element = document.getElementById(elementId);
-            if (cockpitImgRoute === imgsRoute + 'cockpitoff.jpg' && elementId === 'cockpit1'){
-                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitparking.jpg';
-                  element.classList.remove("clickable");
-                  element.removeAttribute('onclick');
-                  document.getElementById(`item${counter}`).classList.add("highlight");
-                  const secondClickableElement = document.getElementById("cockpit2");
-                  secondClickableElement.classList.add("clickable");
-                  secondClickableElement.setAttribute('onclick','continueCount(event)');
-                  allowCount = false;
-            } else if(cockpitImgRoute === imgsRoute + 'cockpitparking.jpg' && elementId === 'cockpit3'){
-                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitthrottle.jpg';
-                  element.classList.remove("clickable");
-                  element.removeAttribute('onclick');
-                  document.getElementById(`item${counter}`).classList.add("highlight");
-                  const fourthClickableElement = document.getElementById("cockpit4");
-                  fourthClickableElement.classList.add("clickable");
-                  fourthClickableElement.setAttribute('onclick','changeImage(event)');
-                  allowCount = false;
-            } else if(cockpitImgRoute === imgsRoute + 'cockpitthrottle.jpg' && elementId === 'cockpit4'){
-                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmixture.jpg';
-                  element.classList.remove("clickable");
-                  element.removeAttribute('onclick');
-                  document.getElementById(`item${counter}`).classList.add("highlight");
-                  nextBtn.innerText = "NEXT";
-                  nextBtn.classList.remove('nextbtngrey');
-                  nextBtn.classList.add('nextbtn');
-            } else if(cockpitImgRoute === imgsRoute + 'cockpitmixture.jpg' && elementId === 'cockpit6'){
-                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmaster.jpg';
-                  element.classList.remove("clickable");
-                  element.removeAttribute('onclick');
-                  document.getElementById(`item${counter}`).classList.add("highlight");
-                  const seventhClickableElement = document.getElementById("cockpit7");
-                  seventhClickableElement.classList.add("clickable");
-                  seventhClickableElement.setAttribute('onclick','continueCount(event)');
-                  allowCount = false;
-            } else if(cockpitImgRoute === imgsRoute + 'cockpitmaster.jpg' && elementId === 'cockpit8') {
-                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitposition.jpg';
-                  element.classList.remove("clickable");
-                  element.removeAttribute('onclick');
-                  document.getElementById(`item${counter}`).classList.add("highlight");
-                  nextBtn.innerText = "NEXT";
-                  nextBtn.classList.remove('nextbtngrey');
-                  nextBtn.classList.add('nextbtn');
-            } else if(cockpitImgRoute === imgsRoute + 'cockpitposition.jpg') {
-                  cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitcanopy.jpg';
-                  nextBtn.innerText = "TOUCH";
-                  nextBtn.classList.remove('nextbtn');
-                  nextBtn.classList.add('nextbtngrey');
-                  const ninthClickableElement = document.getElementById("cockpit9");
-                  ninthClickableElement.classList.add("clickable");
-                  ninthClickableElement.setAttribute('onclick','continueCount(event)');
-                  counter--;
-                  allowCount = false;
-            }
-         };
+			/* 
+            Adds clickable functionalities to maptag elements.
+               The maptag elements are selected from their index number in the clickableAreaElements Array (always starting at 0).
+               The functionEventString accepts two string as options: 'continueCount(event)' or 'changeImage(event)'.
+               Invoke example: setMapTagEvent(4, 'changeImage(event)');
+         */
+			function setMapTagEvent(elementNumber, functionEventString) {
+				clickableAreaElements[elementNumber].classList.add("clickable");
+				clickableAreaElements[elementNumber].setAttribute(
+					"onclick",
+					functionEventString
+				);
+			}
 
-         imageMapResize();
-         
-      </script>
+			/* 
+            Removes clickable functionalities to maptag elements.
+               The maptag elements are selected from their index number in the clickableAreaElements Array (always starting at 0).
+               Invoke example: unsetMapTagEvent(4);
+         */
+			function unsetMapTagEvent(elementNumber) {
+				clickableAreaElements[elementNumber].classList.remove("clickable");
+				clickableAreaElements[elementNumber].removeAttribute("onclick");
+			}
 
-   </body>
+			// Starts The CBT Activity
+			function start() {
+				if (!allowCount) {
+					itemTitle.classList.add("titlehighlight");
+					startBtn.classList.remove("startbtn");
+					startBtn.classList.add("startbtngrey");
+					nextBtn.classList.remove("nextbtngrey");
+					nextBtn.classList.add("nextbtn");
+					// Checks `tr` HTML elements and stores each one id in the 'tableTrIdArr' Array
+					const tableRows = document.getElementsByTagName("tr");
+					for (let i = 0; i < tableRows.length; i++) {
+						if (tableRows[i].id !== "") {
+							tableTrIdArr.push(tableRows[i].id);
+						}
+					}
+					startBtn.setAttribute("onclick", "restart()");
+					changeInnerText(startBtn, "RESTART");
+					changeInnerText(nextBtn, "TOUCH");
+					disableBtn(nextBtn);
+					setMapTagEvent(0, "changeImage(event)");
+				}
+			}
+
+			// ACTIONS associated to the event click at `nextBtn`
+			nextBtn.addEventListener("click", () => {
+				if (allowCount) {
+					counter++;
+					console.log("Estoy en Next Btn: ", counter);
+					/* La variable 'tableElement' se actualiza en cada nextBtn click (cuando ésté está habilitado) 
+               agarrando el valor actual de counter y buscando el elemento de la tabla que corresponda a 'item+counter'
+               */
+					const tableElement = document.getElementById(`item${counter}`);
+
+					/*
+               A continuación, desarrollar las condiciones (en función del valor de counter) para ejecutar las funciones deseadas en cada caso
+               */
+					if (counter >= 2 && counter < 4) {
+						// Applies 'highlight' class to selected HTML Element
+						highlightRow(tableElement);
+					} else if (counter === 4) {
+						highlightRow(tableElement);
+						allowCount = false;
+						setMapTagEvent(1, "continueCount(event)");
+					}
+					// else if (counter < 4) {
+					// 	highlightRow(tableElement);
+					// } else if (counter === 4) {
+					// 	highlightRow(tableElement);
+					// 	// Block the counter to avoid nextBtn to increase the counter
+					// 	allowCount = false;
+					// 	changeInnerText(nextBtn, "TOUCH");
+					// 	// Temporally disables all styles associated to nextBtn
+					// 	disableBtn(nextBtn);
+					// 	// Adds clickable functionalities to maptag elements
+					// 	setMapTagEvent(0, "changeImage(event)");
+					// } else if (counter === 9) {
+					// 	highlightRow(tableElement);
+					// 	allowCount = false;
+					// 	setMapTagEvent(4, "continueCount(event)");
+					// 	changeInnerText(nextBtn, "TOUCH");
+					// 	disableBtn(nextBtn);
+					// } else if (counter === 14) {
+					// 	highlightRow(tableElement);
+					// } else if (counter === 15) {
+					// 	highlightRow(tableElement);
+					// 	// Invokes Main Action changeImage(event)
+					// 	changeImage(event);
+					// }
+				}
+			});
+
+			// ACTIONS on clickable maptag elements with no image change effects
+			function continueCount(event) {
+				if (!allowCount) {
+					counter++;
+					console.log("Estoy en Evento SIN cambio de Imagen: ", counter);
+					const tableElement = document.getElementById(`item${counter}`);
+					highlightRow(tableElement);
+					const elementId = event.composedPath()[0].attributes.id.nodeValue;
+					const element = document.getElementById(elementId);
+					// Same as unsetMapTagEvent for each element
+					element.classList.remove("clickable");
+					element.removeAttribute("onclick");
+					if (counter === 6) {
+						setMapTagEvent(2, "changeImage(event)");
+					} else if (counter === 10) {
+						setMapTagEvent(5, "changeImage(event)");
+					} else if (counter === 12) {
+						setMapTagEvent(7, "changeImage(event)");
+						allowCount = false;
+					} else if (counter === 16) {
+						allowCount = false;
+					}
+				}
+			}
+
+			// ACTIONS on clickable maptag elements with image change effects
+			function changeImage(event) {
+				allowCount = true;
+				counter++;
+				console.log("Estoy en Evento CON cambio de Imagen: ", counter);
+				const cockpit = document.getElementById("cockpit");
+				let cockpitImgRoute = cockpit.attributes.src.nodeValue;
+				const tableElement = document.getElementById(`item${counter}`);
+				if (cockpitImgRoute === imgsRoute + "cockpitcanopy.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
+					unsetMapTagEvent(0);
+					highlightRow(tableElement);
+					changeInnerText(nextBtn, "NEXT");
+					enableBtn(nextBtn);
+				} else if (cockpitImgRoute === imgsRoute + "cockpitparking.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitthrottle.jpg";
+					unsetMapTagEvent(2);
+					highlightRow(tableElement);
+					setMapTagEvent(3, "changeImage(event)");
+					allowCount = false;
+				} else if (cockpitImgRoute === imgsRoute + "cockpitthrottle.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmixture.jpg";
+					unsetMapTagEvent(3);
+					highlightRow(tableElement);
+					changeInnerText(nextBtn, "NEXT");
+					enableBtn(nextBtn);
+				} else if (cockpitImgRoute === imgsRoute + "cockpitmixture.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
+					unsetMapTagEvent(5);
+					highlightRow(tableElement);
+					setMapTagEvent(6, "continueCount(event)");
+					allowCount = false;
+				} else if (cockpitImgRoute === imgsRoute + "cockpitmaster.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitposition.jpg";
+					unsetMapTagEvent(7);
+					highlightRow(tableElement);
+					changeInnerText(nextBtn, "NEXT");
+					enableBtn(nextBtn);
+				} else if (cockpitImgRoute === imgsRoute + "cockpitposition.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitcanopy.jpg";
+					changeInnerText(nextBtn, "TOUCH");
+					disableBtn(nextBtn);
+					setMapTagEvent(8, "continueCount(event)");
+					counter--;
+					allowCount = false;
+				}
+			}
+
+			imageMapResize();
+		</script>
+	</body>
 </html>
