@@ -50,57 +50,76 @@
 			<area
 				id="cockpit3"
 				target=""
-				alt="Starter"
-				title="Starter"
-				coords="490,662,26"
-				shape="circle"
+				alt="Throttle"
+				title="Throttle"
+				coords="726,751,832,790"
+				shape="rect"
 				cursor="pointer"
 			/>
 			<area
 				id="cockpit4"
 				target=""
-				alt="Throttle"
-				title="Throttle"
-				coords="729,995,831,1036"
-				shape="rect"
+				alt="Ignition"
+				title="Ignition"
+				coords="491,663,20"
+				shape="circle"
 				cursor="pointer"
 			/>
 			<area
 				id="cockpit5"
 				target=""
-				alt="Oil Press"
-				title="Oil Press"
-				coords="1343,523,51"
-				shape="circle"
+				alt="Starter"
+				title="Starter"
+				coords="579,142,594,195"
+				shape="rect"
 				cursor="pointer"
 			/>
 			<area
 				id="cockpit6"
 				target=""
-				alt="Fuel Prime"
-				title="Fuel Prime"
-				coords="565,639,614,689"
+				alt="Throttle Idle"
+				title="Throttle Idle"
+				coords="735,997,823,958"
 				shape="rect"
 				cursor="pointer"
 			/>
 			<area
 				id="cockpit7"
 				target=""
-				alt="GEN Warning Light"
-				title="GEN Warning Light"
-				coords="537,141,557,192"
-				shape="rect"
+				alt="Oil Press"
+				title="Oil Press"
+				coords="1344,520,55"
+				shape="circle"
 				cursor="pointer"
 			/>
 			<area
 				id="cockpit8"
 				target=""
-				alt="Starter Warning Light"
-				title="Starter Warning Light"
-				coords="578,143,595,195"
+				alt="Prime"
+				title="Prime"
+				coords="617,636,657,686"
 				shape="rect"
 				cursor="pointer"
 			/>
+	        <area
+				id="cockpit9"
+				target=""
+				alt="GEN"
+				title="GEN"
+				coords="535,142,555,192"
+				shape="rect"
+				cursor="pointer"
+			/>
+		    <area
+				id="cockpit10"
+				target=""
+				alt="Starter"
+				title="Starter"
+				coords="572,144,592,194"
+				shape="rect"
+				cursor="pointer"
+			/>
+			
 		</map>
 
 		<div class="tablediv">
@@ -299,13 +318,15 @@
 					/*
                A continuación, desarrollar las condiciones (en función del valor de counter) para ejecutar las funciones deseadas en cada caso
                */
-					if (counter >= 2 && counter < 4) {
+					if (counter === 5) {
 						// Applies 'highlight' class to selected HTML Element
 						highlightRow(tableElement);
-					} else if (counter === 4) {
+					} else if (counter === 6) {
 						highlightRow(tableElement);
+						setMapTagEvent(4, "changeImage(event)");
 						allowCount = false;
-						setMapTagEvent(1, "continueCount(event)");
+						changeInnerText(nextBtn, "TOUCH")
+						disableBtn(nextBtn)
 					}
 					// else if (counter < 4) {
 					// 	highlightRow(tableElement);
@@ -346,14 +367,14 @@
 					// Same as unsetMapTagEvent for each element
 					element.classList.remove("clickable");
 					element.removeAttribute("onclick");
-					if (counter === 6) {
-						setMapTagEvent(2, "changeImage(event)");
-					} else if (counter === 10) {
-						setMapTagEvent(5, "changeImage(event)");
-					} else if (counter === 12) {
-						setMapTagEvent(7, "changeImage(event)");
+					if (counter === 143) {
+						setMapTagEvent(50, "changeImage(event)");
+					} else if (counter === 410) {
+						setMapTagEvent(55, "changeImage(event)");
+					} else if (counter === 812) {
+						setMapTagEvent(75, "changeImage(event)");
 						allowCount = false;
-					} else if (counter === 16) {
+					} else if (counter === 161) {
 						allowCount = false;
 					}
 				}
@@ -371,39 +392,60 @@
 					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
 					unsetMapTagEvent(0);
 					highlightRow(tableElement);
-					changeInnerText(nextBtn, "NEXT");
-					enableBtn(nextBtn);
-				} else if (cockpitImgRoute === imgsRoute + "cockpitparking.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitthrottle.jpg";
+					setMapTagEvent(1, "changeImage(event)");
+				} else if (cockpitImgRoute === imgsRoute + "cockpitoff.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
+					unsetMapTagEvent(1);
+					highlightRow(tableElement);
+					setMapTagEvent(2, "changeImage(event)");
+				} else if (cockpitImgRoute === imgsRoute + "cockpitmaster.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmixture.jpg";
 					unsetMapTagEvent(2);
 					highlightRow(tableElement);
 					setMapTagEvent(3, "changeImage(event)");
-					allowCount = false;
-				} else if (cockpitImgRoute === imgsRoute + "cockpitthrottle.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmixture.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "cockpitmixture.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitparking.jpg";
 					unsetMapTagEvent(3);
 					highlightRow(tableElement);
-					changeInnerText(nextBtn, "NEXT");
-					enableBtn(nextBtn);
-				} else if (cockpitImgRoute === imgsRoute + "cockpitmixture.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
-					unsetMapTagEvent(5);
-					highlightRow(tableElement);
-					setMapTagEvent(6, "continueCount(event)");
-					allowCount = false;
-				} else if (cockpitImgRoute === imgsRoute + "cockpitmaster.jpg") {
+					changeInnerText(nextBtn, "NEXT")
+					enableBtn(nextBtn)
+					allowCount = true;
+				} else if (cockpitImgRoute === imgsRoute + "cockpitparking.jpg") {
 					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitposition.jpg";
+					unsetMapTagEvent(4);
+					highlightRow(tableElement);
+					setMapTagEvent(5, "changeImage(event)");
+				} else if (cockpitImgRoute === imgsRoute + "cockpitposition.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitthrottle.jpg";
+				    unsetMapTagEvent(5);
+					highlightRow(tableElement);
+					setMapTagEvent(6, "changeImage(event)");
+				} else if (cockpitImgRoute === imgsRoute + "cockpitthrottle.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest1.jpg";
+					unsetMapTagEvent(6);
+					highlightRow(tableElement);
+					setMapTagEvent(7, "changeImage(event)");
+				} else if (cockpitImgRoute === imgsRoute + "cockpittest1.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest2.jpg";
 					unsetMapTagEvent(7);
 					highlightRow(tableElement);
-					changeInnerText(nextBtn, "NEXT");
-					enableBtn(nextBtn);
-				} else if (cockpitImgRoute === imgsRoute + "cockpitposition.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitcanopy.jpg";
-					changeInnerText(nextBtn, "TOUCH");
-					disableBtn(nextBtn);
-					setMapTagEvent(8, "continueCount(event)");
-					counter--;
-					allowCount = false;
+					setMapTagEvent(8, "changeImage(event)");
+				} else if (cockpitImgRoute === imgsRoute + "cockpittest2.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest3.jpg";
+					unsetMapTagEvent(8);
+					highlightRow(tableElement);
+					setMapTagEvent(9, "changeImage(event)");
+				} else if (cockpitImgRoute === imgsRoute + "cockpittest3.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest4.jpg";
+					unsetMapTagEvent(9);
+					highlightRow(tableElement);
+					setMapTagEvent(10, "changeImage(event)");
+				} else if (cockpitImgRoute === imgsRoute + "cockpittest4.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest5.jpg";
+					unsetMapTagEvent(10);
+					highlightRow(tableElement);
+					setMapTagEvent(11, "changeImage(event)");
+
 				}
 			}
 
