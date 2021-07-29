@@ -89,7 +89,7 @@
 				target=""
 				alt="Oil Press"
 				title="Oil Press"
-				coords="1344,520,55"
+				coords="1,1,1"
 				shape="circle"
 				cursor="pointer"
 			/>
@@ -206,7 +206,7 @@
 				target=""
 				alt="Oil PSI"
 				title="Oil PSI"
-				coords="1344,519,52"
+				coords="1341,524,54"
 				shape="circle"
 				cursor="pointer"
 			/>
@@ -240,14 +240,23 @@
          <area
 				id="cockpit24"
 				target=""
-				alt="XPNDR"
-				title="XPNDR"
-				coords="791,232,1125,525"
+				alt="Radio Panel"
+				title="Radio Panel"
+				coords="791,238,1127,525"
 				shape="rect"
 				cursor="pointer"
 			/>
          <area
 				id="cockpit25"
+				target=""
+				alt="XPNDR"
+				title="XPNDR"
+				coords="791,525,1124,602"
+				shape="rect"
+				cursor="pointer"
+			/>
+         <area
+				id="cockpit26"
 				target=""
 				alt="Trim"
 				title="Trim"
@@ -256,7 +265,7 @@
 				cursor="pointer"
 			/>
          <area
-				id="cockpit26"
+				id="cockpit27"
 				target=""
 				alt="Trim NEUTRAL"
 				title="Trim NEUTRAL"
@@ -265,7 +274,7 @@
 				cursor="pointer"
 			/>
          <area
-				id="cockpit27"
+				id="cockpit28"
 				target=""
 				alt="RPM"
 				title="RPM"
@@ -274,7 +283,7 @@
 				cursor="pointer"
 			/>
          <area
-				id="cockpit28"
+				id="cockpit29"
 				target=""
 				alt="Airspeed"
 				title="Airpseed"
@@ -283,7 +292,7 @@
 				cursor="pointer"
 			/>
          <area
-				id="cockpit29"
+				id="cockpit30"
 				target=""
 				alt="Altitude"
 				title="Altitude"
@@ -292,7 +301,7 @@
 				cursor="pointer"
 			/>
          <area
-				id="cockpit30"
+				id="cockpit31"
 				target=""
 				alt="Compass"
 				title="Compass"
@@ -301,11 +310,20 @@
 				cursor="pointer"
 			/>
          <area
-				id="cockpit31"
+				id="cockpit32"
 				target=""
 				alt="Stick"
 				title="Stick"
 				coords="457,986,415,741"
+				shape="rect"
+				cursor="pointer"
+			/>
+         <area
+				id="cockpit33"
+				target=""
+				alt="Warning Lights"
+				title="Warning Lights"
+				coords="540,140,611,195"
 				shape="rect"
 				cursor="pointer"
 			/>
@@ -332,7 +350,7 @@
             </tr>
             <tr id="item4">
                <td><span>4. Engine and Electrical gauges</span></td>
-               <td align="right"><span>FASTEN</span></td>
+               <td align="right"><span>CHECK</span></td>
             </tr>
             <tr id="item5">
                <td><span>5. Flaps (actuation and indicator)</span></td>
@@ -476,7 +494,7 @@
 					changeInnerText(startBtn, "RESTART");
 					changeInnerText(nextBtn, "TOUCH");
 					disableBtn(nextBtn);
-					setMapTagEvent(0, "changeImage(event)");
+					setMapTagEvent(8, "changeImage(event)");
 				}
 			}
 
@@ -493,10 +511,14 @@
 					/*
                A continuación, desarrollar las condiciones (en función del valor de counter) para ejecutar las funciones deseadas en cada caso
                */
-					if (counter === 5) {
+					if (counter === 4) {
 						// Applies 'highlight' class to selected HTML Element
 						highlightRow(tableElement);
-					} else if (counter === 6) {
+                  setMapTagEvent (10, "continueCount(event)")
+						changeInnerText(nextBtn, "TOUCH")
+						disableBtn(nextBtn)
+                  allowCount = false;
+					} else if (counter === 6789) {
 						highlightRow(tableElement);
 						setMapTagEvent(4, "changeImage(event)");
 						allowCount = false;
@@ -542,15 +564,40 @@
 					// Same as unsetMapTagEvent for each element
 					element.classList.remove("clickable");
 					element.removeAttribute("onclick");
-					if (counter === 143) {
-						setMapTagEvent(50, "changeImage(event)");
-					} else if (counter === 410) {
-						setMapTagEvent(55, "changeImage(event)");
-					} else if (counter === 812) {
-						setMapTagEvent(75, "changeImage(event)");
-						allowCount = false;
-					} else if (counter === 161) {
-						allowCount = false;
+					if (counter === 2) {
+						setMapTagEvent(33, "continueCount(event)");
+					} else if (counter === 3) {
+                  unsetMapTagEvent(33);
+                  setMapTagEvent(15, "continueCount(event)");
+                  setMapTagEvent(16, "continueCount(event)");
+                  setMapTagEvent(17, "continueCount(event)");
+                  setMapTagEvent(18, "continueCount(event)");
+                  setMapTagEvent(19, "continueCount(event)");
+                  setMapTagEvent(20, "continueCount(event)");
+                  setMapTagEvent(21, "continueCount(event)");
+                  setMapTagEvent(22, "continueCount(event)");
+               } else if (counter === 4) {
+                  unsetMapTagEvent(15);
+                  unsetMapTagEvent(16);
+                  unsetMapTagEvent(17);
+                  unsetMapTagEvent(18);
+                  unsetMapTagEvent(19);
+                  unsetMapTagEvent(20);
+                  unsetMapTagEvent(21);
+                  unsetMapTagEvent(22);
+						setMapTagEvent(10, "continueCount(event)");
+					} else if (counter === 5) {
+						setMapTagEvent(26, "continueCount(event)");
+					} else if (counter === 6) {
+                  unsetMapTagEvent(26)
+						setMapTagEvent(27, "continueCount(event)");
+               } else if (counter === 7) {
+                  unsetMapTagEvent(27)
+						setMapTagEvent(5, "continueCount(event)");
+               } else if (counter === 8) {
+                  unsetMapTagEvent(5)
+						setMapTagEvent(9, "continueCount(event)");
+                  changeInnerText(nextBtn, "DONE")
 					}
 				}
 			}
@@ -565,9 +612,10 @@
 				const tableElement = document.getElementById(`item${counter}`);
 				if (cockpitImgRoute === imgsRoute + "cockpitcanopy.jpg") {
 					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
-					unsetMapTagEvent(0);
+					unsetMapTagEvent(8);
 					highlightRow(tableElement);
-					setMapTagEvent(1, "changeImage(event)");
+					setMapTagEvent(24, "continueCount(event)");
+               allowCount = false;
 				} else if (cockpitImgRoute === imgsRoute + "cockpitoff.jpg") {
 					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
 					unsetMapTagEvent(1);
