@@ -16,7 +16,7 @@
 		<img
 			id="cockpit"
 			class="cockpit"
-			src="../../../../images/cockpitcanopy.jpg"
+			src="../../../../images/starting1.jpg"
 			usemap="#touchcockpit"
 		/>
 		<map name="touchcockpit">
@@ -388,60 +388,62 @@
 				const cockpit = document.getElementById("cockpit");
 				let cockpitImgRoute = cockpit.attributes.src.nodeValue;
 				const tableElement = document.getElementById(`item${counter}`);
-				if (cockpitImgRoute === imgsRoute + "cockpitcanopy.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
+				if (cockpitImgRoute === imgsRoute + "starting1.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting2.jpg";
 					unsetMapTagEvent(0);
 					highlightRow(tableElement);
 					setMapTagEvent(1, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpitoff.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "starting2.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting3.jpg";
 					unsetMapTagEvent(1);
 					highlightRow(tableElement);
 					setMapTagEvent(2, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpitmaster.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmixture.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "starting3.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting4.jpg";
 					unsetMapTagEvent(2);
 					highlightRow(tableElement);
 					setMapTagEvent(3, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpitmixture.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitparking.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "starting4.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting5.jpg";
 					unsetMapTagEvent(3);
 					highlightRow(tableElement);
 					changeInnerText(nextBtn, "NEXT")
 					enableBtn(nextBtn)
 					allowCount = true;
-				} else if (cockpitImgRoute === imgsRoute + "cockpitparking.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitposition.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "starting5.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting6.jpg";
 					unsetMapTagEvent(4);
 					highlightRow(tableElement);
 					setMapTagEvent(5, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpitposition.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitthrottle.jpg";
+					allowCount
+				} else if (cockpitImgRoute === imgsRoute + "starting6.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting7.jpg";
 				    unsetMapTagEvent(5);
 					highlightRow(tableElement);
 					setMapTagEvent(2, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpitthrottle.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest1.jpg";
+					allowCount = false;
+				} else if (cockpitImgRoute === imgsRoute + "starting7.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting8.jpg";
 					unsetMapTagEvent(2);
 					highlightRow(tableElement);
 					setMapTagEvent(7, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpittest1.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest2.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "starting8.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting9.jpg";
 					unsetMapTagEvent(7);
 					highlightRow(tableElement);
 					setMapTagEvent(1, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpittest2.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest3.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "starting9.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting10.jpg";
 					unsetMapTagEvent(1);
 					highlightRow(tableElement);
 					setMapTagEvent(9, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpittest3.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest4.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "starting10.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting11.jpg";
 					unsetMapTagEvent(9);
 					highlightRow(tableElement);
 					setMapTagEvent(5, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpittest4.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpittest5.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "starting11.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "starting12.jpg";
 					unsetMapTagEvent(5);
 					highlightRow(tableElement);
 					changeInnerText(nextBtn, "DONE")
