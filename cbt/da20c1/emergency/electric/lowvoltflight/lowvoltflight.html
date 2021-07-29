@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>CBT-X</title>
+      <link rel="shortcut icon" href="../../../../favicon.ico" />
+      <link rel="stylesheet" href="../../../../../styles/style.css">
+      <script src="../../../../scripts/imageMapResizer.min.js"></script>
+   </head>
+   <body>
+
+      <img src="../../../../../images/CESDAlogo.png" class="topright" style="height:100px">
+      <img id="cockpit" class="cockpit" src="../../../../../images/cockpitoff.jpg" usemap="#touchcockpit">
+      <map name="touchcockpit">
+      
+         <area id="cockpit0" target="" alt="Parking Brake" title="Parking Brake" coords="991,892,1019,931" shape="rect" cursor="pointer">
+         <area id="cockpit1" target="" alt="Fuel Shut-off Valve" title="Fuel Shut-off Valve"  coords="1042,740,1102,815" shape="rect"  cursor="pointer">
+         <area id="cockpit2" target="" alt="Throttle" title="Throttle" coords="725,972,832,1015" shape="rect" cursor="pointer">
+         <area id="cockpit3" target="" alt="Mixture" title="Mixture"  coords="834,912,881,987" shape="rect" cursor="pointer">
+         <area id="cockpit4" target="" alt="Avionics Master" title="Avionics Master"  coords="739,637,759,683" shape="rect"  cursor="pointer">
+         <area id="cockpit5" target="" alt="GEN/BAT Master Switch" title="GEN/BAT Master Switch" coords="676,627,715,685" shape="rect"  cursor="pointer">
+         <area id="cockpit6" target="" alt="GEN Warning Light" title="GEN Warning Light"  coords="537,141,557,192" shape="rect" cursor="pointer">
+         <area id="cockpit7" target="" alt="Position Light" title="Position Light" coords="236,641,279,690" shape="rect"  cursor="pointer">
+         <area id="cockpit8" target="" alt="Canopy Unlock Warning Light" title="Canopy Unlock Warning Light"  coords="552,139,571,195" shape="rect" cursor="pointer">
+     
+         <!-- 539,141,553,192 -->
+
+      </map>
+
+      <div class="tablediv">
+         <table id="table" align="right">
+            <tr>
+               <th colspan="2" id="itemtitle"><span>LOW VOLTAGE INDICATION IN FLIGHT</span></th>
+            </tr>
+            <tr id="item1">
+               <td><span>1. All non-essential electrics</span></td>
+               <td align="right"><span>Switch OFF</span></td>
+            <tr id="item2">
+               <td><span>- If needle is in yellow arc and ammeter to the left (discharge)</span></td>
+               <td align="right"><span>GENERATOR FAILURE (Refer to 8. TOTAL ELECTRIC FAILURE)</span></td>
+            </tr>
+         </table>
+      </div>
+      <a href="../electric.html" class="btnback">BACK</a>
+      <a href="../../../../../menu.html" class="btnmenu">MENU</a>
+      <div class="navdiv">
+         <a class="btnnav startbtn" id="startbtn" onclick="start()">START</a>
+         <a class="btnnav nextbtngrey" id="nextbtn">NEXT</a>
+      </div>
+
+      <script>
+         
+         // Main variables declaration
+         const itemTitle = document.getElementById("itemtitle");
+         const startBtn = document.getElementById("startbtn");
+         const nextBtn = document.getElementById("nextbtn");
+         const imgsRoute = '../../../../images/';
+         let counter = 0;
+         let allowCount = false;
+         let tableTrIdArr = [];
+         let clickableAreaElements = [];
+
+         // Checks area HTML elements and stores each area id in the 'clickableAreaElements' Array
+         const areaElements = document.getElementsByTagName("area");
+            for (let i = 0; i < areaElements.length; i++) {
+               if(areaElements[i].id !== "") {
+                  clickableAreaElements.push(areaElements[i]);
+               }
+            };
+
+         // Useful at Restart to acknowledge The CBT Activity has restarted on Page Reload
+         if(sessionStorage.getItem('reloading') === "true") {
+            sessionStorage.clear();
+            start();
+            startBtn.innerText = "RESTART";
+         }
+
+         // Starts The CBT Activity
+         function start() {
+            if(!allowCount) {
+               itemTitle.classList.add("titlehighlight");
+               startBtn.classList.remove('startbtn');
+               startBtn.classList.add('startbtngrey');
+               nextBtn.classList.remove('nextbtngrey');
+               nextBtn.classList.add('nextbtn');
+               // Checks `tr` HTML elements and stores each one id in the 'tableTrIdArr' Array
+               const tableRows = document.getElementsByTagName("tr");
+               for (let i = 0; i < tableRows.length; i++) {
+                  if(tableRows[i].id !== "") {
+                     tableTrIdArr.push(tableRows[i].id)
+                  }
+               }
+               startBtn.setAttribute('onclick','restart()');
+               allowCount = true;
+            }
+         };
+
+         // Restarts The CBT Activity
+         function restart(){
+            console.log('Restarting...')
+            sessionStorage.setItem('reloading','true');
+            window.location.reload();
+         };
+
+         /* 
+            Changes Inner Text on a selected HTML Element
+               Invoke example: changeInnerText(startBtn, "RESTART")
+         */
+         function changeInnerText(element, string) {
+            element.innerText = string
+         };
+
+         /* 
+            Applies 'highlight' class to selected HTML Element 
+               Invoke example: highlightRow(tableElement)
+         */
+         function highlightRow(element) {
+            element.classList.add("highlight");
+         };
+
+         /* 
+            Modifies 'btn' styles adding/removing classes to selected Button
+               Invoke example: disableBtn(nextBtn)
+         */
+         function disableBtn(element) {
+            const lowerCaseName = element.id;
+            element.classList.remove(lowerCaseName);
+            element.classList.add(`${lowerCaseName}grey`);
+         };
+
+         /*
+            Modifies 'btn' styles adding/removing classes to selected Button
+               Invoke example: enableBtn(nextBtn)
+         */
+         function enableBtn(element) {
+            const lowerCaseName = element.id;
+            element.classList.remove(`${lowerCaseName}grey`);
+            element.classList.add(lowerCaseName);
+         };
+
+         /* 
+            Adds clickable functionalities to maptag elements.
+               The maptag elements are selected from their index number in the clickableAreaElements Array (always starting at 0).
+               The functionEventString accepts two string as options: 'continueCount(event)' or 'changeImage(event)'.
+               Invoke example: setMapTagEvent(4, 'changeImage(event)');
+         */
+         function setMapTagEvent(elementNumber, functionEventString) {
+            clickableAreaElements[elementNumber].classList.add("clickable");
+            clickableAreaElements[elementNumber].setAttribute('onclick', functionEventString);
+         };
+
+         /* 
+            Removes clickable functionalities to maptag elements.
+               The maptag elements are selected from their index number in the clickableAreaElements Array (always starting at 0).
+               Invoke example: unsetMapTagEvent(4);
+         */
+         function unsetMapTagEvent(elementNumber) {
+            clickableAreaElements[elementNumber].classList.remove("clickable");
+            clickableAreaElements[elementNumber].removeAttribute('onclick');
+         };
+
+
+         // ACTIONS associated to the event click at `nextBtn`
+         nextBtn.addEventListener('click', () => {
+            if(allowCount) {
+               counter++;
+               /* La variable 'tableElement' se actualiza en cada nextBtn click (cuando ésté está habilitado) 
+               agarrando el valor actual de counter y buscando el elemento de la tabla que corresponda a 'item+counter'
+               */
+               const tableElement = document.getElementById(`item${counter}`);
+
+               /*
+               A continuación, desarrollar las condiciones (en función del valor de counter) para ejecutar las funciones deseadas en cada caso
+               */
+               if(counter === 1) {
+                  // Changes Buttons Text. The functions accepts two params (HTML Element, String)
+                  changeInnerText(startBtn, "RESTART");
+                  // Applies 'highlight' class to selected HTML Element
+                  highlightRow(tableElement);
+               } else if(counter < 4) {
+                  highlightRow(tableElement);
+               } else if(counter === 4) {
+                  highlightRow(tableElement);
+                  // Block the counter to avoid nextBtn to increase the counter 
+                  allowCount = false;
+                  changeInnerText(nextBtn, "TOUCH");
+                  // Temporally disables all styles associated to nextBtn
+                  disableBtn(nextBtn);
+                  // Adds clickable functionalities to maptag elements
+                  setMapTagEvent(0, 'changeImage(event)');
+               } else if(counter === 9) {
+                  highlightRow(tableElement);
+                  allowCount = false;
+                  setMapTagEvent(4, 'continueCount(event)');
+                  changeInnerText(nextBtn, "TOUCH");
+                  disableBtn(nextBtn);
+               } else if(counter === 14) {
+                  highlightRow(tableElement);
+               } else if(counter === 15) {
+                  highlightRow(tableElement);
+                  // Invokes Main Action changeImage(event)
+                  changeImage(event);
+               }
+            }
+         })
+
+         // ACTIONS on clickable maptag elements with no image change effects
+         function continueCount(event) {
+            if(!allowCount) {
+               counter++;
+               const tableElement = document.getElementById(`item${counter}`);
+               highlightRow(tableElement);
+               const elementId = event.composedPath()[0].attributes.id.nodeValue;
+               const element = document.getElementById(elementId);
+               // Same as unsetMapTagEvent for each element
+               element.classList.remove("clickable");
+               element.removeAttribute('onclick');
+               if(counter === 6) {
+                  setMapTagEvent(2, 'changeImage(event)');
+               } else if(counter === 10) {
+                  setMapTagEvent(5, 'changeImage(event)');
+               } else if(counter === 12) {
+                  setMapTagEvent(7, 'changeImage(event)');
+                  allowCount = false;
+               } else if(counter === 16) {
+                  allowCount = false;
+               }
+            }
+         };
+
+         // ACTIONS on clickable maptag elements with image change effects
+         function changeImage(event) {
+            allowCount = true;
+            counter++;
+            const cockpit = document.getElementById("cockpit");
+            let cockpitImgRoute = cockpit.attributes.src.nodeValue;
+            const tableElement = document.getElementById(`item${counter}`);
+            if (cockpitImgRoute === imgsRoute + 'cockpitoff.jpg'){
+               cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitparking.jpg';
+               unsetMapTagEvent(0)
+               highlightRow(tableElement);
+               setMapTagEvent(1, 'continueCount(event)');
+               allowCount = false;
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitparking.jpg') {
+               cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitthrottle.jpg';
+               unsetMapTagEvent(2);
+               highlightRow(tableElement);
+               setMapTagEvent(3, 'changeImage(event)');
+               allowCount = false;
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitthrottle.jpg'){
+               cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmixture.jpg';
+               unsetMapTagEvent(3);
+               highlightRow(tableElement);
+               changeInnerText(nextBtn, "NEXT");
+               enableBtn(nextBtn);
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitmixture.jpg') {
+               cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitmaster.jpg';
+               unsetMapTagEvent(5);
+               highlightRow(tableElement);
+               setMapTagEvent(6, 'continueCount(event)');
+               allowCount = false;
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitmaster.jpg') {
+               cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitposition.jpg';
+               unsetMapTagEvent(7);
+               highlightRow(tableElement);
+               changeInnerText(nextBtn, "NEXT");
+               enableBtn(nextBtn);
+            } else if(cockpitImgRoute === imgsRoute + 'cockpitposition.jpg') {
+               cockpit.attributes.src.nodeValue = imgsRoute + 'cockpitcanopy.jpg';
+               changeInnerText(nextBtn, "TOUCH");
+               disableBtn(nextBtn);
+               setMapTagEvent(8, 'continueCount(event)');
+               counter--;
+               allowCount = false;
+            }
+         }
+
+         imageMapResize();
+         
+      </script>
+
+   </body>
+</html>
