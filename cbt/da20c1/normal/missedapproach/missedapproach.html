@@ -10,7 +10,7 @@
    <body>
 
       <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
-      <img id="cockpit" class="cockpit" src="../../../../images/cockpitcanopy.jpg" usemap="#touchcockpit">
+      <img id="cockpit" class="cockpit" src="../../../../images/toga1.jpg" usemap="#touchcockpit">
       <map name="touchcockpit">
 			<area
 				id="cockpit0"
@@ -125,7 +125,7 @@
 				target=""
 				alt="Throttle"
 				title="Throttle"
-				coords="730,996,834,1037"
+				coords="725,825,829,864"
 				shape="rect"
 				cursor="pointer"
 			/>
@@ -134,7 +134,7 @@
 				target=""
 				alt="Mixture"
 				title="Mixture"
-				coords="828,963,881,1036"
+				coords="835,734,878,807"
 				shape="rect"
 				cursor="pointer"
 			/>
@@ -563,9 +563,9 @@
 					element.removeAttribute("onclick");
 					if (counter === 2) {
                   unsetMapTagEvent(13);
-						setMapTagEvent(30, "continueCount(event)");
+						setMapTagEvent(29, "continueCount(event)");
 					} else if (counter === 3) {
-                  unsetMapTagEvent(30);
+                  unsetMapTagEvent(29);
                   setMapTagEvent(10, "changeImage(event)");
                   allowCount = false;
                } 
@@ -597,14 +597,14 @@
 				const cockpit = document.getElementById("cockpit");
 				let cockpitImgRoute = cockpit.attributes.src.nodeValue;
 				const tableElement = document.getElementById(`item${counter}`);
-				if (cockpitImgRoute === imgsRoute + "cockpitcanopy.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
+				if (cockpitImgRoute === imgsRoute + "toga1.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "toga2.jpg";
 					unsetMapTagEvent(12);
 					highlightRow(tableElement);
 					setMapTagEvent(13, "continueCount(event)");
                allowCount = false;
-				} else if (cockpitImgRoute === imgsRoute + "cockpitoff.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "toga2.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "toga3.jpg";
 					unsetMapTagEvent(10);
 					highlightRow(tableElement);
                changeInnerText(nextBtn, "DONE");

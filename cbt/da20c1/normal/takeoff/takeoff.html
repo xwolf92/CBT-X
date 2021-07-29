@@ -10,7 +10,7 @@
    <body>
 
       <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
-      <img id="cockpit" class="cockpit" src="../../../../images/cockpitcanopy.jpg" usemap="#touchcockpit">
+      <img id="cockpit" class="cockpit" src="../../../../images/takeoff1.jpg" usemap="#touchcockpit">
       <map name="touchcockpit">
 			<area
 				id="cockpit0"
@@ -134,7 +134,7 @@
 				target=""
 				alt="Mixture"
 				title="Mixture"
-				coords="828,963,881,1036"
+				coords="837,736,878,810"
 				shape="rect"
 				cursor="pointer"
 			/>
@@ -639,23 +639,23 @@
 				const cockpit = document.getElementById("cockpit");
 				let cockpitImgRoute = cockpit.attributes.src.nodeValue;
 				const tableElement = document.getElementById(`item${counter}`);
-				if (cockpitImgRoute === imgsRoute + "cockpitcanopy.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
+				if (cockpitImgRoute === imgsRoute + "takeoff1.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "takeoff2.jpg";
 					unsetMapTagEvent(0);
                unsetMapTagEvent(3);
 					highlightRow(tableElement);
 					setMapTagEvent(27, "continueCount(event)");
                allowCount = false;
-				} else if (cockpitImgRoute === imgsRoute + "cockpitoff.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "takeoff2.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "takeoff3.jpg";
 					unsetMapTagEvent(25);
 					highlightRow(tableElement);
 					setMapTagEvent(13, "continueCount(event)");
                allowCount = false;
 
 
-				} else if (cockpitImgRoute === imgsRoute + "cockpitmaster.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmixture.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "takeoff3.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "takeoff4.jpg";
 					unsetMapTagEvent(12);
 					highlightRow(tableElement);
                setMapTagEvent(28, "continueCount(event)");

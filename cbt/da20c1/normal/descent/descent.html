@@ -10,7 +10,7 @@
    <body>
 
       <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
-      <img id="cockpit" class="cockpit" src="../../../../images/cockpitcanopy.jpg" usemap="#touchcockpit">
+      <img id="cockpit" class="cockpit" src="../../../../images/descent1.jpg" usemap="#touchcockpit">
       <map name="touchcockpit">
 			<area
 				id="cockpit0"
@@ -125,7 +125,7 @@
 				target=""
 				alt="Throttle"
 				title="Throttle"
-				coords="730,996,834,1037"
+				coords="723,829,834,863"
 				shape="rect"
 				cursor="pointer"
 			/>
@@ -134,7 +134,7 @@
 				target=""
 				alt="Mixture"
 				title="Mixture"
-				coords="828,963,881,1036"
+				coords="837,783,878,853"
 				shape="rect"
 				cursor="pointer"
 			/>
@@ -597,18 +597,18 @@
 				const cockpit = document.getElementById("cockpit");
 				let cockpitImgRoute = cockpit.attributes.src.nodeValue;
 				const tableElement = document.getElementById(`item${counter}`);
-				if (cockpitImgRoute === imgsRoute + "cockpitcanopy.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
+				if (cockpitImgRoute === imgsRoute + "descent1.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "descent2.jpg";
 					unsetMapTagEvent(9);
 					highlightRow(tableElement);
 					setMapTagEvent(13, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpitoff.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "descent2.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "descent3.jpg";
 					unsetMapTagEvent(13);
 					highlightRow(tableElement);
                setMapTagEvent(12, "changeImage(event)");
-            } else if (cockpitImgRoute === imgsRoute + "cockpitmaster.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmixture.jpg";
+            } else if (cockpitImgRoute === imgsRoute + "descent3.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "descent4.jpg";
 					unsetMapTagEvent(12);
 					highlightRow(tableElement);
                setMapTagEvent(30, "continueCount(event)");

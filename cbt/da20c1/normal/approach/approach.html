@@ -10,7 +10,7 @@
    <body>
 
       <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
-      <img id="cockpit" class="cockpit" src="../../../../images/cockpitcanopy.jpg" usemap="#touchcockpit">
+      <img id="cockpit" class="cockpit" src="../../../../images/approach1.jpg" usemap="#touchcockpit">
       <map name="touchcockpit">
 			<area
 				id="cockpit0"
@@ -134,7 +134,7 @@
 				target=""
 				alt="Mixture"
 				title="Mixture"
-				coords="828,963,881,1036"
+				coords="839,734,881,809"
 				shape="rect"
 				cursor="pointer"
 			/>
@@ -577,8 +577,8 @@
 					element.classList.remove("clickable");
 					element.removeAttribute("onclick");
 					if (counter === 2) {
-                  unsetMapTagEvent(10);
-						setMapTagEvent(30, "continueCount(event)");
+                 		unsetMapTagEvent(10);
+						setMapTagEvent(29, "continueCount(event)");
 					} else if (counter === 3) {
                   unsetMapTagEvent(30);
                   setMapTagEvent(9, "continueCount(event)");
@@ -618,15 +618,15 @@
 				const cockpit = document.getElementById("cockpit");
 				let cockpitImgRoute = cockpit.attributes.src.nodeValue;
 				const tableElement = document.getElementById(`item${counter}`);
-				if (cockpitImgRoute === imgsRoute + "cockpitcanopy.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
+				if (cockpitImgRoute === imgsRoute + "approach1.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "approach2.jpg";
 					unsetMapTagEvent(0);
 					highlightRow(tableElement);
 					changeInnerText(nextBtn, "NEXT");
                enableBtn(nextBtn);
                allowCount = true;
-				} else if (cockpitImgRoute === imgsRoute + "cockpitoff.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "approach2.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "approach3.jpg";
 					unsetMapTagEvent(12);
 					highlightRow(tableElement);
                setMapTagEvent(0, "changeImage(event)");

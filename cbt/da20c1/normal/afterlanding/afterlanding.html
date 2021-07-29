@@ -10,7 +10,7 @@
    <body>
 
       <img src="../../../../images/CESDAlogo.png" class="topright" style="height:100px">
-      <img id="cockpit" class="cockpit" src="../../../../images/cockpitcanopy.jpg" usemap="#touchcockpit">
+      <img id="cockpit" class="cockpit" src="../../../../images/after1.jpg" usemap="#touchcockpit">
       <map name="touchcockpit">
 			<area
 				id="cockpit0"
@@ -134,7 +134,7 @@
 				target=""
 				alt="Mixture"
 				title="Mixture"
-				coords="828,963,881,1036"
+				coords="835,734,878,807"
 				shape="rect"
 				cursor="pointer"
 			/>
@@ -612,28 +612,28 @@
 				const cockpit = document.getElementById("cockpit");
 				let cockpitImgRoute = cockpit.attributes.src.nodeValue;
 				const tableElement = document.getElementById(`item${counter}`);
-				if (cockpitImgRoute === imgsRoute + "cockpitcanopy.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitoff.jpg";
+				if (cockpitImgRoute === imgsRoute + "after1.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "after2.jpg";
 					unsetMapTagEvent(10);
 					highlightRow(tableElement);
 					setMapTagEvent(1, "changeImage(event)");
-				} else if (cockpitImgRoute === imgsRoute + "cockpitoff.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmaster.jpg";
+				} else if (cockpitImgRoute === imgsRoute + "after2.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "after3.jpg";
 					unsetMapTagEvent(1);
 					highlightRow(tableElement);
                setMapTagEvent(0, "changeImage(event)");
-            } else if (cockpitImgRoute === imgsRoute + "cockpitmaster.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitmixture.jpg";
+            } else if (cockpitImgRoute === imgsRoute + "after3.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "after4.jpg";
 					unsetMapTagEvent(0);
 					highlightRow(tableElement);
                setMapTagEvent(3, "changeImage(event)");
-            } else if (cockpitImgRoute === imgsRoute + "cockpitmixture.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitparking.jpg";
+            } else if (cockpitImgRoute === imgsRoute + "after4.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "after5.jpg";
 					unsetMapTagEvent(3);
 					highlightRow(tableElement);
                setMapTagEvent(25, "changeImage(event)");
-            } else if (cockpitImgRoute === imgsRoute + "cockpitparking.jpg") {
-					cockpit.attributes.src.nodeValue = imgsRoute + "cockpitposition.jpg";
+            } else if (cockpitImgRoute === imgsRoute + "after5.jpg") {
+					cockpit.attributes.src.nodeValue = imgsRoute + "after6.jpg";
 					unsetMapTagEvent(25);
 					highlightRow(tableElement);
                setMapTagEvent(13, "continueCount(event)");
